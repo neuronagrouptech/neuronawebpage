@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Logo from "../assets/LOGO.avif";
+import LanguageSelector from "./LanguajeSelector";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t } = useTranslation();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleScroll = () => {
-    const offset = window.scrollY;
-    if (offset > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -36,61 +35,70 @@ const Navbar = () => {
       }`}
     >
       {/* Logo */}
-      <img src={Logo} alt="Logo Neurona" className="w-40 h-12 object-contain mx-auto md:mx-0 md:ml-28" />
+      <img
+        src={Logo}
+        alt="Logo Neurona"
+        className="w-40 h-12 object-contain mx-auto md:mx-0 md:ml-28"
+      />
 
       {/* Desktop Links */}
       <ul className="hidden h-12 items-center md:flex space-x-8">
         <li>
           <button
             onClick={() => scrollToSection("home")}
-            className={`text-whiteNeurona text-xl font-helvetica hover:text-blueGreen transition-colors ${
+            className={`text-whiteNeurona text-base md:text-lg lg:text-xl font-helvetica hover:text-blueGreen transition-colors ${
               isScrolled ? "text-white" : ""
             }`}
           >
-            Home
+            {t("Home")}
           </button>
         </li>
         <li>
           <button
             onClick={() => scrollToSection("about")}
-            className={`text-whiteNeurona text-xl font-helvetica hover:text-blueGreen transition-colors ${
+            className={`text-whiteNeurona text-base md:text-lg lg:text-xl font-helvetica hover:text-blueGreen transition-colors ${
               isScrolled ? "text-white" : ""
             }`}
           >
-            About
+            {t("About")}
           </button>
         </li>
         <li>
           <button
             onClick={() => scrollToSection("services")}
-            className={`text-whiteNeurona text-xl font-helvetica hover:text-blueGreen transition-colors ${
+            className={`text-whiteNeurona text-base md:text-lg lg:text-xl font-helvetica hover:text-blueGreen transition-colors ${
               isScrolled ? "text-white" : ""
             }`}
           >
-            Services
+            {t("Services")}
           </button>
         </li>
         <li>
           <button
             onClick={() => scrollToSection("cases")}
-            className={`text-whiteNeurona text-xl font-helvetica hover:text-blueGreen transition-colors ${
+            className={`text-whiteNeurona text-base md:text-lg lg:text-xl font-helvetica hover:text-blueGreen transition-colors ${
               isScrolled ? "text-white" : ""
             }`}
           >
-            Success Cases
+            {t("Cases")}
           </button>
         </li>
         <li>
           <button
             onClick={() => scrollToSection("partners")}
-            className={`text-whiteNeurona text-xl font-helvetica hover:text-blueGreen transition-colors ${
+            className={`text-whiteNeurona text-base md:text-lg lg:text-xl font-helvetica hover:text-blueGreen transition-colors ${
               isScrolled ? "text-white" : ""
             }`}
           >
-            Partners
+            {t("Partners")}
           </button>
         </li>
       </ul>
+
+      {/* Language Selector */}
+      <div className="hidden md:block">
+        <LanguageSelector />
+      </div>
 
       {/* Contact Button for Desktop */}
       <button
@@ -101,7 +109,7 @@ const Navbar = () => {
             : "bg-whiteNeurona text-darkGrayNeurona"
         } text-sm md:text-base rounded-full hover:bg-blueGreen hover:text-whiteNeurona transition`}
       >
-        CONTACT
+        {t("Contact")}
       </button>
 
       {/* Hamburger Menu Button */}
@@ -124,7 +132,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            Home
+            {t("Home")}
           </button>
           <button
             className="text-sm font-helvetica hover:text-blueGreen transition-colors"
@@ -133,7 +141,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            About
+            {t("About")}
           </button>
           <button
             className="text-sm font-helvetica hover:text-blueGreen transition-colors"
@@ -142,7 +150,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            Services
+            {t("Services")}
           </button>
           <button
             className="text-sm font-helvetica hover:text-blueGreen transition-colors"
@@ -151,7 +159,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            Success Cases
+            {t("Cases")}
           </button>
           <button
             className="text-sm font-helvetica hover:text-blueGreen transition-colors"
@@ -160,8 +168,14 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            Partners
+            {t("Partners")}
           </button>
+
+          {/* Language Selector in Mobile Menu */}
+          <div>
+            <LanguageSelector />
+          </div>
+
           <button
             className="px-5 py-2 bg-whiteNeurona text-darkGrayNeurona text-sm rounded-full hover:bg-darkLeft hover:text-whiteNeurona transition"
             onClick={() => {
@@ -169,7 +183,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            Contact
+            {t("Contact")}
           </button>
         </div>
       )}
