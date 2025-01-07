@@ -24,5 +24,48 @@
       "Subtitle": "Un Socio Estratégico para el Crecimiento a Largo Plazo",
       "Content": "Elegir a Neurona significa asociarse con un equipo visionario comprometido con tu éxito a largo plazo. No solo ofrecemos soluciones a corto plazo; proporcionamos estrategias escalables diseñadas para crecer junto con tu negocio. Ya sea implementando soluciones en la nube, automatizando procesos críticos o desarrollando modelos de aprendizaje automático a medida, nos enfocamos en crear una hoja de ruta que evolucione con tus necesidades. Con Neurona, no solo te estás preparando para el futuro, estás liderándolo."
     }
+  },
+  "Services": {
+    "AIDataStudio": {
+      "Title": "Estudio de IA y Datos",
+      "Subtitle": "Proyectos de IA Generativa y Aprendizaje Automático",
+      "Details": [
+        "Reducir costos eliminando la necesidad de equipos técnicos internos.",
+        "Soluciones escalables que se adaptan a las necesidades de tu negocio.",
+        "Acceso experto a la IA y la ciencia de datos sin capacitación adicional."
+      ]
+    },
+    "InnovationProductStudio": {
+      "Title": "Estudio de Innovación y Producto",
+      "Subtitle": "Socio de Innovación de Crecimiento como Servicio (GIPaaS)",
+      "Details": [
+        "Orientación estratégica para descubrir oportunidades de crecimiento y expansión.",
+        "Habilitación de innovación con nuevas tecnologías, procesos y productos.",
+        "Soporte continuo como un socio a largo plazo, ayudándote a mantenerte a la vanguardia."
+      ]
+    },
+    "SoftwareDevelopmentStudio": {
+      "Title": "Estudio de Desarrollo de Software",
+      "Subtitle": "Ingeniero de Software como Servicio (SEaaS)",
+      "Details": [
+        "Compromiso flexible sin compromisos a largo plazo.",
+        "Velocidad y eficiencia para incorporar talento rápidamente y comenzar proyectos.",
+        "Base global de talento para encontrar los mejores ingenieros según tus necesidades."
+      ]
+    },
+    "EnterpriseTechArchitecture": {
+      "Title": "Servicios de Arquitectura Empresarial y Tecnológica",
+      "Subtitle": "Planificación estratégica, gestión de datos y soluciones digitales avanzadas.",
+      "Details": [
+        "Arquitectura Empresarial: Habilitación de la planificación estratégica y ejecución con un enfoque preciso, trazable y eficiente.",
+        "Arquitectura de Datos: Diseño de arquitecturas de datos escalables y seguras, optimizando la gestión y el análisis de datos.",
+        "Gobernanza de Datos: Implementación de marcos que garanticen calidad, seguridad y privacidad alineados con regulaciones internacionales.",
+        "Configuración de Arquitectura: Establecimiento de prácticas de Arquitectura Empresarial para consistencia y estandarización.",
+        "Documentación Técnica de Arquitectura: Desarrollo de repositorios centralizados para visiones holísticas organizacionales.",
+        "Arquitectura de Referencia: Maximización de la estandarización en habilitadores tecnológicos para el diseño eficiente de soluciones.",
+        "Gobernanza de Arquitectura Empresarial: Establecimiento de modelos de gobernanza para adoptar prácticas arquitectónicas.",
+        "Arquitectura Digital: Implementación de soluciones digitales avanzadas con tecnologías disruptivas."
+      ]
+    }
   }
 }
