@@ -7,8 +7,11 @@ import Unity from "../assets/partners/unity-logo.svg";
 import BankIcon from "../assets/partners/BIAN.png";
 import AWSIcon from "../assets/partners/AWS WA.png";
 import TOGAFIcon from "../assets/partners/TOGAF.png";
+import { useTranslation } from "react-i18next";
 
 const Partners = () => {
+  const { t } = useTranslation();
+
   const partners = [
     { name: "AWS", logo: AWS },
     { name: "Unity", logo: Unity },
@@ -21,18 +24,17 @@ const Partners = () => {
     {
       name: "Bank Industry Architect Network",
       logo: BankIcon,
-      description: "Global standards for financial architecture solutions.",
+      description:t("Partners.Frameworks.BIAN") ,
     },
     {
       name: "AWS Well-Architected",
       logo: AWSIcon,
-      description:
-        "Framework for building secure, efficient cloud applications.",
+      description:t("Partners.Frameworks.AWS") ,
     },
     {
       name: "TOGAF Framework",
       logo: TOGAFIcon,
-      description: "Enterprise architecture methodology and framework.",
+      description: t("Partners.Frameworks.TOGAF") ,
     },
   ];
 
@@ -68,7 +70,7 @@ const Partners = () => {
       }`}
     >
       <h1 className="text-4xl md:text-6xl text-whiteNeurona font-helvetica mt-32 mb-12">
-        Partners
+        {t("Partners.Title")}
       </h1>
       <div className="flex justify-center items-center gap-6 flex-wrap">
         {partners.map((partner) => (
@@ -89,11 +91,10 @@ const Partners = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-6 relative z-10">
         <div className="md:w-2/3 lg:w-1/2 mt-12 text-grayNeurona">
           <h2 className="my-8 text-2xl font-helvetica text-whiteNeurona md:text-4xl">
-            We Work with International Architecture Frameworks
+            {t("Partners.Frameworks.Title")}
           </h2>
           <p className="text-grayNeurona">
-            These are some of the frameworks we use to ensure high-standard
-            solutions.
+            {t("Partners.Frameworks.Subtitle")}
           </p>
         </div>
         <div className="mt-16 grid divide-x divide-y divide-darkGrayNeurona overflow-hidden rounded-3xl border text-grayNeurona border-darkGrayNeurona sm:grid-cols-2 lg:grid-cols-3 lg:divide-y-0">

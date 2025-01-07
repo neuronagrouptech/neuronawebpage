@@ -1,0 +1,113 @@
+{
+  "NavBar": {
+    "Home": "Home",
+    "About": "About Us",
+    "Services": "Services",
+    "Cases": "Success Cases",
+    "Partners": "Partners",
+    "Contact": "Contact Us"
+  },
+  "Home": {
+    "Title1": "Revolutionizing Business",
+    "Title2": "with Innovative Solutions",
+    "Subtitle1": "Partner with",
+    "Subtitle2": "to drive growth and disrupt the status quo."
+  },
+  "About": {
+    "OurVision": {
+      "Title": "Our Vision",
+      "Subtitle": "Revolutionizing the Future with AI",
+      "Content": "At Neurona, we’re driven by a bold vision to transform industries and everyday life through the power of Artificial Intelligence and immersive VR/AR technology. Our goal is to lead the charge in reshaping how businesses operate and how people experience the world around them. We believe that the future of innovation lies in harnessing these cutting-edge technologies to solve complex challenges and create smarter, more efficient solutions."
+    },
+    "WhyNeurona": {
+      "Title": "Why Neurona",
+      "Subtitle": "A Strategic Partner for Long-Term Growth",
+      "Content": "Choosing Neurona means partnering with a forward-thinking team that’s committed to your long-term success. We don’t just offer short-term solutions; we provide scalable strategies designed to grow with your business. Whether it’s implementing cloud solutions, automating critical processes, or developing tailored machine learning models, we focus on creating a roadmap that evolves with your needs. With Neurona, you’re not just preparing for the future — you’re leading it."
+    }
+  },
+  "Services": {
+    "Title": "Services",
+    "AIDataStudio": {
+      "Title": "AI & Data Studio",
+      "Subtitle": "Gen AI & Machine Learning Projects",
+      "Details": [
+        "Cut Costs by eliminating the need for in-house tech teams.",
+        "Scalable Solutions that adapt to your business needs.",
+        "Expert Access to AI and data science without additional training."
+      ]
+    },
+    "InnovationProductStudio": {
+      "Title": "Innovation & Product Studio",
+      "Subtitle": "Growth Innovation Partner as a Service (GIPaaS)",
+      "Details": [
+        "Strategic Guidance to uncover growth and expansion opportunities.",
+        "Innovation Enablement with new tech, processes, and products.",
+        "Ongoing Support as a long-term partner, helping you stay ahead of the curve."
+      ]
+    },
+    "SoftwareDevelopmentStudio": {
+      "Title": "Software Development Studio",
+      "Subtitle": "Software Engineer as a Service (SEaaS)",
+      "Details": [
+        "Flexible Engagement with no long-term commitments.",
+        "Speed & Efficiency to quickly onboard talent and start projects.",
+        "Global Talent Pool to find the best engineers for your needs."
+      ]
+    },
+    "EnterpriseTechArchitecture": {
+      "Title": "Enterprise and Technology Architecture Services",
+      "Subtitle": "Strategic planning, data management, and advanced digital solutions.",
+      "Details": [
+        "Business Architecture: Enabling strategic planning and execution with a precise, traceable, and efficient approach.",
+        "Data Architecture: Designing scalable and secure data architectures, optimizing data management and analytics.",
+        "Data Governance: Implementing frameworks ensuring quality, security, and privacy aligned with international regulations.",
+        "Architecture Setup: Establishing Enterprise Architecture practices for consistency and standardization.",
+        "Technical Architecture Documentation: Developing centralized repositories for holistic organizational views.",
+        "Reference Architecture: Maximizing standardization in technological enablers for efficient solution design.",
+        "Enterprise Architecture Governance: Establishing governance models to adopt architectural practices.",
+        "Digital Architecture: Implementing advanced digital solutions with disruptive technologies."
+      ]
+    }
+  },
+  "Cases": {
+    "Title": "Success Cases",
+    "Case1": {
+      "Title": "Success Story: Kaumer in Colombia",
+      "Description": "Neurona has built Kaumer's platform on AWS, designed to be scalable, resilient, and cost-efficient. This solution not only significantly reduces operational costs but also lays the foundation for the implementation of artificial intelligence, optimizing processes and accelerating strategic decision-making."
+    },
+    "Case2": {
+      "Title": "Success Story: The Visionverse",
+      "Description": "Neurona has migrated 'The Visionverse' platform to AWS using EC2 instances. The implemented solution has allowed The Visionverse to reduce its operational costs and improve platform availability, ensuring an optimal user experience."
+    }
+  },
+  "Partners": {
+    "Title": "Partners",
+    "Frameworks": {
+      "Title": "We Work with International Architecture Frameworks",
+      "Subtitle": "These are some of the frameworks we use to ensure high-standard solutions.",
+      "BIAN": "Global standards for financial architecture solutions.",
+      "AWS": "Framework for building secure, efficient cloud applications.",
+      "TOGAD": "Enterprise architecture methodology and framework."
+    }
+  },
+  "Contact": {
+    "Title": "Contact Us",
+    "Name": "Name",
+    "Last": "Last Name",
+    "Company":"Company (Optional)",
+    "Email": "Email",
+    "Message":"Message",
+    "Messages": {
+      "Errors": {
+        "EmailSent": "You have already sent a message. Please try again later.",
+        "RequiredFields": "Name, last name, email, and message are required!",
+        "InvalidEmail": "Please enter a valid email address!",
+        "EmailFailed": "Failed to send email. Please try again later."
+      },
+      "Success": {
+        "EmailSent": "Your message has been sent!"
+      }
+    },
+    "Send": "Send Message"
+  }
+}
