@@ -12,6 +12,18 @@
     "Title2": "with Innovative Solutions",
     "Subtitle1": "Partner with",
     "Subtitle2": "to drive growth and disrupt the status quo."
-  }
+  },
+ "About": {
+      "OurVision": {
+        "Title": "Our Vision",
+        "Subtitle": "Revolutionizing the Future with AI",
+        "Content": "At Neurona, we’re driven by a bold vision to transform industries and everyday life through the power of Artificial Intelligence and immersive VR/AR technology. Our goal is to lead the charge in reshaping how businesses operate and how people experience the world around them. We believe that the future of innovation lies in harnessing these cutting-edge technologies to solve complex challenges and create smarter, more efficient solutions."
+      },
+      "WhyNeurona": {
+        "Title": "Why Neurona",
+        "Subtitle": "A Strategic Partner for Long-Term Growth",
+        "Content": "Choosing Neurona means partnering with a forward-thinking team that’s committed to your long-term success. We don’t just offer short-term solutions; we provide scalable strategies designed to grow with your business. Whether it’s implementing cloud solutions, automating critical processes, or developing tailored machine learning models, we focus on creating a roadmap that evolves with your needs. With Neurona, you’re not just preparing for the future — you’re leading it."
+      }
+    }
   
 }

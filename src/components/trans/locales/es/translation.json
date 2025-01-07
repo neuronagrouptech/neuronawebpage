@@ -12,5 +12,17 @@
     "Title2": "con Soluciones Innovadoras",
     "Subtitle1": "Asóciate con",
     "Subtitle2": "para impulsar el crecimiento y romper el statu quo."
+  },
+  "About": {
+    "OurVision": {
+      "Title": "Nuestra Visión",
+      "Subtitle": "Revolucionando el Futuro con IA",
+      "Content": "En Neurona, nos impulsa una visión audaz de transformar las industrias y la vida cotidiana a través del poder de la Inteligencia Artificial y la tecnología inmersiva de VR/AR. Nuestro objetivo es liderar el cambio en la forma en que las empresas operan y cómo las personas experimentan el mundo que las rodea. Creemos que el futuro de la innovación radica en aprovechar estas tecnologías de vanguardia para resolver desafíos complejos y crear soluciones más inteligentes y eficientes."
+    },
+    "WhyNeurona": {
+      "Title": "¿Por qué Neurona?",
+      "Subtitle": "Un Socio Estratégico para el Crecimiento a Largo Plazo",
+      "Content": "Elegir a Neurona significa asociarse con un equipo visionario comprometido con tu éxito a largo plazo. No solo ofrecemos soluciones a corto plazo; proporcionamos estrategias escalables diseñadas para crecer junto con tu negocio. Ya sea implementando soluciones en la nube, automatizando procesos críticos o desarrollando modelos de aprendizaje automático a medida, nos enfocamos en crear una hoja de ruta que evolucione con tus necesidades. Con Neurona, no solo te estás preparando para el futuro, estás liderándolo."
+    }
   }
 }
