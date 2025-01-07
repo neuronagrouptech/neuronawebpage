@@ -8,22 +8,24 @@ const LanguageSelector = () => {
     e.preventDefault();
     i18n.changeLanguage(e.target.value);
     setSelectedLanguage(e.target.value);
-    localStorage.setItem("lang", selectedLanguage);
+    localStorage.setItem("lang", e.target.value);
   };
 
   return (
-    <select
-      className="bg-transparent text-whiteNeurona text-base md:text-lg lg:text-xl border-none outline-none cursor-pointer hover:text-blueGreen transition"
-      onChange={chooseLanguage}
-      defaultValue={selectedLanguage}
-    >
-      <option value="en" className="text-darkLeft">
-        English
-      </option>
-      <option value="es" className="text-darkLeft">
-        Spanish
-      </option>
-    </select>
+    <div className="relative">
+      <select
+        className="bg-darkRight text-whiteNeurona text-sm md:text-base lg:text-lg border border-blueGreen rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blueGreen cursor-pointer hover:bg-darkLeft transition-all duration-150"
+        onChange={chooseLanguage}
+        defaultValue={selectedLanguage}
+      >
+        <option value="en" className="text-whiteNeurona">
+          EN 
+        </option>
+        <option value="es" className="text-whiteNeurona">
+          ES 
+        </option>
+      </select>
+    </div>
   );
 };
 
