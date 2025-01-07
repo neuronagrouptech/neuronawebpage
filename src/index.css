@@ -14,6 +14,7 @@ code {
 /* === Custom Components === */
 @layer components {
   .shadow-blueGreen {
-    @apply shadow-blueGreen;
+    /* Usa directamente la propiedad extendida */
+    box-shadow: 0px 4px 15px rgba(0, 169, 157, 0.7);
   }
 }

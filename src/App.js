@@ -11,8 +11,6 @@ import Contact from  "./components/forms/Contact";
 import Footer from  "./components/common/Footer";
 import Copyright from  "./components/common/Copyright";
 import setupParticleAnimation from "./components/assets/home/particleAnimation";
-
-
 import "./index.css";
 
 const App = () => {
