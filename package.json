@@ -10,13 +10,13 @@
     "i18next-http-backend": "^3.0.1",
     "lucide-react": "^0.469.0",
     "motion": "^11.15.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-i18next": "^15.4.0",
     "react-intersection-observer": "^9.14.0",
     "react-router": "^7.1.1",
-    "react-scripts": "5.0.1",
-    "swiper": "^11.1.15"
+    "swiper": "^11.1.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,8 +47,6 @@
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17",
-    "web-vitals": "^4.2.4"
+    "tailwindcss": "^3.4.17"
   }
 }
