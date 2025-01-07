@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Logo from "../assets/LOGO.avif";
-import LanguageSelector from "./LanguajeSelector";
+import LanguageSelector from "../utils/LanguajeSelector";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
