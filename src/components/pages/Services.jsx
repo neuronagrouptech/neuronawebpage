@@ -212,7 +212,7 @@ const Services = () => {
     >
       <div className="max-w-[1300px] mx-auto">
         <h1 className="text-4xl md:text-6xl font-light text-center mb-12 md:mb-24 text-whiteNeurona font-helvetica">
-          Services
+          {t("Services.Title")}
         </h1>
         <div
           ref={carouselRef}

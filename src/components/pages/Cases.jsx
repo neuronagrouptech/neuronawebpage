@@ -146,7 +146,7 @@ const Cases = () => {
         }`}
       >
         <h2 className="text-4xl md:text-6xl font-helvetica text-white text-center mb-8">
-          Success Cases
+        {t("Cases.Title")}
         </h2>
         <div
           ref={carouselRef}

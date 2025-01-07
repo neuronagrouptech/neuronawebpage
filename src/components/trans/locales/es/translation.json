@@ -26,6 +26,7 @@
     }
   },
   "Services": {
+    "Title": "Nuestros Servicios",
     "AIDataStudio": {
       "Title": "Estudio de IA y Datos",
       "Subtitle": "Proyectos de IA Generativa y Aprendizaje Automático",
@@ -69,6 +70,7 @@
     }
   },
   "Cases": {
+    "Title": "Casos de Éxito",
     "Case1": {
       "Title": "Caso de Éxito: Kaumer en Colombia",
       "Description": "Neurona ha construido para Kaumer su plataforma en AWS, diseñada para ser escalable, resiliente y costo-eficiente. Esta solución no solo reduce significativamente los costos operativos, sino que también sienta las bases para la implementación de inteligencia artificial, optimizando procesos y acelerando la toma de decisiones estratégicas."
@@ -76,6 +78,16 @@
     "Case2": {
       "Title": "Caso de Éxito: The Visionverse",
       "Description": "Neurona ha migrado la plataforma de 'The Visionverse' a AWS utilizando instancias EC2. La solución implementada ha permitido a The Visionverse reducir sus costos operativos y mejorar la disponibilidad de su plataforma, garantizando una experiencia de usuario óptima."
+    }
+  },
+  "Partners": {
+    "Title": "Socios",
+    "Frameworks": {
+      "Title": "Trabajamos con marcos de arquitectura internacionales",
+      "Subtitle": "Estos son algunos de los marcos que utilizamos para garantizar soluciones de alto nivel.",
+      "BIAN": "Estándares globales para soluciones de arquitectura financiera",
+      "AWS": "Marco para crear aplicaciones en la nube seguras y eficientes.",
+      "TOGAD": "Metodología y marco de arquitectura empresarial."
     }
   }
 }
