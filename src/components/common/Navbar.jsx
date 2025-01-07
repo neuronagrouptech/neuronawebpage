@@ -50,7 +50,7 @@ const Navbar = () => {
               isScrolled ? "text-white" : ""
             }`}
           >
-            {t("Home")}
+            {t("NavBar.Home")}
           </button>
         </li>
         <li>
@@ -60,7 +60,7 @@ const Navbar = () => {
               isScrolled ? "text-white" : ""
             }`}
           >
-            {t("About")}
+            {t("NavBar.About")}
           </button>
         </li>
         <li>
@@ -70,7 +70,7 @@ const Navbar = () => {
               isScrolled ? "text-white" : ""
             }`}
           >
-            {t("Services")}
+            {t("NavBar.Services")}
           </button>
         </li>
         <li>
@@ -80,7 +80,7 @@ const Navbar = () => {
               isScrolled ? "text-white" : ""
             }`}
           >
-            {t("Cases")}
+            {t("NavBar.Cases")}
           </button>
         </li>
         <li>
@@ -90,7 +90,7 @@ const Navbar = () => {
               isScrolled ? "text-white" : ""
             }`}
           >
-            {t("Partners")}
+            {t("NavBar.Partners")}
           </button>
         </li>
       </ul>
@@ -109,7 +109,7 @@ const Navbar = () => {
             : "bg-whiteNeurona text-darkGrayNeurona"
         } text-sm md:text-base rounded-full hover:bg-blueGreen hover:text-whiteNeurona transition`}
       >
-        {t("Contact")}
+        {t("NavBar.Contact")}
       </button>
 
       {/* Hamburger Menu Button */}
@@ -132,7 +132,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            {t("Home")}
+            {t("NavBar.Home")}
           </button>
           <button
             className="text-sm font-helvetica hover:text-blueGreen transition-colors"
@@ -141,7 +141,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            {t("About")}
+            {t("NavBar.About")}
           </button>
           <button
             className="text-sm font-helvetica hover:text-blueGreen transition-colors"
@@ -150,7 +150,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            {t("Services")}
+            {t("NavBar.Services")}
           </button>
           <button
             className="text-sm font-helvetica hover:text-blueGreen transition-colors"
@@ -159,7 +159,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            {t("Cases")}
+            {t("NavBar.Cases")}
           </button>
           <button
             className="text-sm font-helvetica hover:text-blueGreen transition-colors"
@@ -168,7 +168,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            {t("Partners")}
+            {t("NavBar.Partners")}
           </button>
 
           {/* Language Selector in Mobile Menu */}
@@ -183,7 +183,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
           >
-            {t("Contact")}
+            {t("NavBar.Contact")}
           </button>
         </div>
       )}

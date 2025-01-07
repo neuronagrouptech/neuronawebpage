@@ -1,8 +1,16 @@
 {
-  "Home": "Inicio",
-  "About": "Acerca de",
-  "Services": "Servicios",
-  "Cases": "Casos de Éxito",
-  "Partners": "Socios",
-  "Contact": "Contacto"
+  "NavBar": {
+    "Home": "Inicio",
+    "About": "Acerca de",
+    "Services": "Servicios",
+    "Cases": "Casos de Éxito",
+    "Partners": "Socios",
+    "Contact": "Contacto"
+  },
+  "Home": {
+    "Title1": "Revolucionando los Negocios",
+    "Title2": "con Soluciones Innovadoras",
+    "Subtitle1": "Asóciate con",
+    "Subtitle2": "para impulsar el crecimiento y romper el statu quo."
+  }
 }

@@ -1,8 +1,17 @@
 {
-  "Home": "Home",
-  "About": "About Us",
-  "Services": "Services",
-  "Cases": "Success Cases",
-  "Partners": "Partners",
-  "Contact": "Contact Us"
+  "NavBar": {
+    "Home": "Home",
+    "About": "About Us",
+    "Services": "Services",
+    "Cases": "Success Cases",
+    "Partners": "Partners",
+    "Contact": "Contact Us"
+  },
+  "Home":{
+    "Title1": "Revolutionizing Business",
+    "Title2": "with Innovative Solutions",
+    "Subtitle1": "Partner with",
+    "Subtitle2": "to drive growth and disrupt the status quo."
+  }
+  
 }
