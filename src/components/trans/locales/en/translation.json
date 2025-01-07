@@ -67,5 +67,15 @@
         "Digital Architecture: Implementing advanced digital solutions with disruptive technologies."
       ]
     }
+  },
+  "Cases": {
+    "Case1": {
+      "Title": "Success Story: Kaumer in Colombia",
+      "Description": "Neurona has built Kaumer's platform on AWS, designed to be scalable, resilient, and cost-efficient. This solution not only significantly reduces operational costs but also lays the foundation for the implementation of artificial intelligence, optimizing processes and accelerating strategic decision-making."
+    },
+    "Case2": {
+      "Title": "Success Story: The Visionverse",
+      "Description": "Neurona has migrated 'The Visionverse' platform to AWS using EC2 instances. The implemented solution has allowed The Visionverse to reduce its operational costs and improve platform availability, ensuring an optimal user experience."
+    }
   }
 }

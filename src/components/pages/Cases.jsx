@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const VideoCard = ({ video, isExpanded, onToggle }) => {
   return (
@@ -67,6 +68,7 @@ const VideoCard = ({ video, isExpanded, onToggle }) => {
 };
 
 const Cases = () => {
+  const {t} = useTranslation(); 
   const [expandedIndex, setExpandedIndex] = useState(null);
   const carouselRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -100,17 +102,15 @@ const Cases = () => {
     {
       id: "XUn5-F7Bjb4",
       logo: "https://www.kaumer.com/es/wp-content/uploads/sites/2/2024/08/Logo_Kaumer_2x.png",
-      title: "Caso de Éxito: Kaumer en Colombia",
-      description:
-        "Neurona ha construido para Kaumer su plataforma en AWS, diseñada para ser escalable, resiliente y costo-eficiente. Esta solución no solo reduce significativamente los costos operativos, sino que también sienta las bases para la implementación de inteligencia artificial, optimizando procesos y acelerando la toma de decisiones estratégicas.",
+      title: t("Cases.Case1.Title"),
+      description: t("Cases.Case1.Description")
     },
     
     {
         id: "hf36RSJQQ7E",
         logo: "https://static.wixstatic.com/media/87c39b_40200903dd874f6ca281fa9320f9d9b3~mv2.png/v1/fill/w_195,h_29,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dise%C3%B1o%20sin%20t%C3%ADtulo_edited.png",
-        title: "Caso de Éxito: The Visionverse",
-        description:
-          "Neurona ha migrado la plataforma de 'The Visionverse' a AWS utilizando instancias EC2. La solución implementada ha permitido a The Visionverse reducir sus costos operativos y mejorar la disponibilidad de su plataforma, garantizando una experiencia de usuario óptima.",
+        title: t("Cases.Case2.Title"),
+        description: t("Cases.Case2.Description")
       },
   ];
 
