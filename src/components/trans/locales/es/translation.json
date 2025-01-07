@@ -89,5 +89,25 @@
       "AWS": "Marco para crear aplicaciones en la nube seguras y eficientes.",
       "TOGAD": "Metodología y marco de arquitectura empresarial."
     }
+  },
+  "Contact": {
+    "Title": "Contáctanos",
+    "Name": "Nombre",
+    "Last": "Apellido",
+    "Company": "Empresa (Opcional)",
+    "Email": "Correo Electrónico",
+    "Message": "Mensaje",
+    "Messages": {
+      "Errors": {
+        "EmailSent": "Ya has enviado un mensaje. Por favor, inténtalo de nuevo más tarde.",
+        "RequiredFields": "¡El nombre, apellido, correo electrónico y mensaje son obligatorios!",
+        "InvalidEmail": "¡Por favor, ingresa una dirección de correo electrónico válida!",
+        "EmailFailed": "No se pudo enviar el correo electrónico. Por favor, inténtalo de nuevo más tarde."
+      },
+      "Success": {
+        "EmailSent": "¡Tu mensaje ha sido enviado!"
+      }
+    },
+    "Send": "Enviar Mensaje"
   }
 }
