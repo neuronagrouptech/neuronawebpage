@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
-
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./src/assets/**/*.{js,jsx,html}"],
   theme: {
     extend: {
       colors: {
@@ -13,12 +12,26 @@ module.exports = {
         darkGrayNeurona: "#212537",
       },
       boxShadow: {
-        blueGreen: '0px 4px 15px rgba(0, 169, 157, 0.7)',
+        blueGreen: "0px 4px 15px rgba(0, 169, 157, 0.7)",
       },
       fontFamily: {
-        helvetica: ['"Helvetica Light"', 'Arial', 'sans-serif'],
+        sans: ['"Helvetica Light"', "Arial", "sans-serif"],
+        mono: ['"Courier New"', "monospace"],
+      },
+      spacing: {
+        128: "32rem",
+        144: "36rem",
+      },
+      animation: {
+        fadeIn: "fadeIn 2s ease-in-out",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };
