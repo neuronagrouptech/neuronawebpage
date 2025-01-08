@@ -13,11 +13,14 @@ const resources = {
   },
 };
 
+const defaultLang = localStorage.getItem("lang") || "en";
+
 i18n
   .use(initReactI18next)
   .init({
     resources, 
-    lng: localStorage.getItem("lang"), 
+    returnObjects: true,
+    lng: defaultLang, 
     debug: true,
     fallbackLng: "en", 
     interpolation: {
