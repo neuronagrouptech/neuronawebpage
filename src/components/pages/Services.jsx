@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 const ServiceCard = ({ icon, service, isExpanded, onToggle }) => {
+  console.log("ServiceCard: ",service.details);
   return (
     <motion.div
       className={`relative transition-all duration-500 ease-in-out cursor-pointer bg-darkLeft rounded-xl
@@ -57,7 +58,7 @@ const ServiceCard = ({ icon, service, isExpanded, onToggle }) => {
         </div>
 
         <AnimatePresence>
-          {isExpanded && (
+          {isExpanded && Array.isArray(service.details) && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
@@ -152,6 +153,8 @@ const Services = () => {
       },
     },
   ];
+  console.log("Servicios: ", services[0].service.details); // Esto debería mostrar un array
+
 
   useEffect(() => {
     if (carouselRef.current && expandedIndex !== null) {
