@@ -16,7 +16,7 @@ const Contact = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [isVisible, setIsVisible] = useState(false);
-  const [isEmailSent, setIsEmailSent] = useState(false); 
+  const [isEmailSent, setIsEmailSent] = useState(false);
 
   const formRef = useRef();
   const observerRef = useRef();
@@ -114,16 +114,16 @@ const Contact = () => {
     <div
       id="contact"
       ref={observerRef}
-      className="relative z-10 flex flex-col md:flex-row justify-left items-center font-helvetica px-4 sm:px-10 md:ml-20 mb-16 md:mb-48"
+      className="min-h-full relative z-10 flex flex-col md:flex-row justify-left items-center font-sans px-4 sm:px-10 md:ml-20 mb-16 md:mb-48 pt-28"
     >
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className={`w-full md:w-1/2 p-4 rounded-lg font-helvetica transform transition-transform duration-1000 ${
+        className={`w-full md:w-1/2 p-4 rounded-lg font-sans transform transition-transform duration-1000 ${
           isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
         }`}
       >
-        <h1 className="text-4xl md:text-5xl text-whiteNeurona font-helvetica mb-6">
+        <h1 className="text-4xl md:text-5xl text-whiteNeurona font-sans mb-6">
           {t("Contact.Title")}
         </h1>
 
@@ -135,7 +135,7 @@ const Contact = () => {
 
         {/* Name */}
         <div className="mb-4">
-          <label htmlFor="name" className="block text-xl font-helvetica text-blueGreen mb-2">
+          <label htmlFor="name" className="block text-xl font-sans text-blueGreen mb-2">
             {t("Contact.Name")}
           </label>
           <input
@@ -151,7 +151,7 @@ const Contact = () => {
 
         {/* Last Name */}
         <div className="mb-4">
-          <label htmlFor="lastName" className="block text-xl font-helvetica text-blueGreen mb-2">
+          <label htmlFor="lastName" className="block text-xl font-sans text-blueGreen mb-2">
             {t("Contact.Last")}
           </label>
           <input
@@ -167,7 +167,7 @@ const Contact = () => {
 
         {/* Company */}
         <div className="mb-4">
-          <label htmlFor="company" className="block text-xl font-helvetica text-blueGreen mb-2">
+          <label htmlFor="company" className="block text-xl font-sans text-blueGreen mb-2">
             {t("Contact.Company")}
           </label>
           <input
@@ -183,7 +183,7 @@ const Contact = () => {
 
         {/* Email */}
         <div className="mb-4">
-          <label htmlFor="email" className="block text-xl font-helvetica text-blueGreen mb-2">
+          <label htmlFor="email" className="block text-xl font-sans text-blueGreen mb-2">
             {t("Contact.Email")}
           </label>
           <input
@@ -199,7 +199,7 @@ const Contact = () => {
 
         {/* Message */}
         <div className="mb-6">
-          <label htmlFor="message" className="block text-xl font-helvetica text-blueGreen mb-2">
+          <label htmlFor="message" className="block text-xl font-sans text-blueGreen mb-2">
             {t("Contact.Message")}
           </label>
           <textarea
@@ -216,7 +216,7 @@ const Contact = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full py-2 shadow-blueGreen text-lg bg-darkRight text-white font-helvetica rounded-lg hover:bg-blueGreen focus:outline-none focus:ring-2 focus:ring-blueGreen focus:ring-offset-2 hover:shadow-lg hover:shadow-blueGreen transition-colors duration-150"
+          className="w-full py-2 shadow-blueGreen text-lg bg-darkRight text-whiteNeurona font-sans rounded-lg hover:bg-blueGreen focus:outline-none focus:ring-2 focus:ring-blueGreen focus:ring-offset-2 hover:shadow-lg hover:shadow-blueGreen transition-colors duration-150"
         >
           {t("Contact.Send")}
         </button>

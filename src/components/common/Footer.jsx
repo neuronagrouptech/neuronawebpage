@@ -28,12 +28,12 @@ const Footer = () => {
 
         {/* Company Section */}
         <div className="relative z-10">
-          <h4 className="text-lg font-bold mb-4 font-helvetica">COMPANY</h4>
+          <h4 className="text-lg font-bold mb-4 font-sans">COMPANY</h4>
           <ul className="space-y-2">
             <li>
               <button
                 onClick={() => scrollToSection("home")}
-                className="hover:text-blueGreen font-helvetica transition text-left cursor-pointer"
+                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
               >
                 Home
               </button>
@@ -41,7 +41,7 @@ const Footer = () => {
             <li>
               <button
                 onClick={() => scrollToSection("about")}
-                className="hover:text-blueGreen font-helvetica transition text-left cursor-pointer"
+                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
               >
                 About
               </button>
@@ -49,7 +49,7 @@ const Footer = () => {
             <li>
               <button
                 onClick={() => scrollToSection("services")}
-                className="hover:text-blueGreen font-helvetica transition text-left cursor-pointer"
+                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
               >
                 Services
               </button>
@@ -57,9 +57,7 @@ const Footer = () => {
             <li>
               <button
                 onClick={() => scrollToSection("partners")}
-                className={
-                  "hover:text-blueGreen font-helvetica transition text-left cursor-pointer"
-                }
+                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
               >
                 Success Cases
               </button>
@@ -67,7 +65,7 @@ const Footer = () => {
             <li>
               <button
                 onClick={() => scrollToSection("partners")}
-                className="hover:text-blueGreen font-helvetica transition text-left cursor-pointer"
+                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
               >
                 Partners
               </button>
@@ -77,12 +75,12 @@ const Footer = () => {
 
         {/* Legal Section */}
         <div className="relative z-10">
-          <h4 className="text-lg font-bold mb-4 font-helvetica">LEGAL</h4>
+          <h4 className="text-lg font-bold mb-4 font-sans">LEGAL</h4>
           <ul className="space-y-2">
             <li>
               <button
                 onClick={() => scrollToSection("terms")}
-                className="hover:text-blueGreen font-helvetica transition text-left cursor-pointer"
+                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
               >
                 Terms & Conditions
               </button>
@@ -90,7 +88,7 @@ const Footer = () => {
             <li>
               <button
                 onClick={() => scrollToSection("privacy")}
-                className="hover:text-blueGreen font-helvetica transition text-left cursor-pointer"
+                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
               >
                 Privacy Policy
               </button>
@@ -100,14 +98,14 @@ const Footer = () => {
 
         {/* Social Section */}
         <div className="relative z-10">
-          <h4 className="text-lg font-bold mb-4 font-helvetica">SOCIAL</h4>
+          <h4 className="text-lg font-bold mb-4 font-sans">SOCIAL</h4>
           <ul className="space-y-2">
             <li>
               <a
                 href="https://www.linkedin.com/company/neurona-company/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center font-helvetica transition cursor-pointer group"
+                className="flex items-center font-sans transition cursor-pointer group"
               >
                 <Linkedin className="w-5 h-5 mr-2 transition group-hover:text-[#0A66C2]" />
                 <span className="transition group-hover:text-[#0A66C2]">
@@ -120,7 +118,7 @@ const Footer = () => {
                 href="https://www.instagram.com/neurona.global/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center font-helvetica transition cursor-pointer group"
+                className="flex items-center font-sans transition cursor-pointer group"
               >
                 <Instagram className="w-5 h-5 mr-2 transition group-hover:text-[#E4405F]" />
                 <span className="transition group-hover:text-[#E4405F]">
@@ -133,7 +131,7 @@ const Footer = () => {
                 href="https://www.youtube.com/@NeuronaEnterprise/videos"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center font-helvetica transition cursor-pointer group"
+                className="flex items-center font-sans transition cursor-pointer group"
               >
                 <Youtube className="w-5 h-5 mr-2 transition group-hover:text-[#FF0000]" />
                 <span className="transition group-hover:text-[#FF0000]">
