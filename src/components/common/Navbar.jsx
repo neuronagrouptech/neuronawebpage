@@ -21,7 +21,7 @@ const Navbar = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "center" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" }); // Cambiado a "start"
     }
   };
 
@@ -87,6 +87,7 @@ const Navbar = () => {
           ? "bg-darkLeft bg-opacity-80 backdrop-blur"
           : "bg-transparent"
       }`}
+      style={{ height: "64px" }} // Establecemos una altura fija para el navbar
     >
       {/* Logo */}
       <img
@@ -97,6 +98,7 @@ const Navbar = () => {
 
       {/* Desktop Links */}
       <DesktopLinks />
+
       {/* Contact Button for Desktop */}
       <button
         onClick={() => scrollToSection("contact")}
