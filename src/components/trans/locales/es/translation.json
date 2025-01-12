@@ -5,6 +5,21 @@
     "Services": "Servicios",
     "Cases": "Casos de Éxito",
     "Partners": "Socios",
+    "Technology": {
+      "Title": "Tecnologías",
+      "Escala": {
+        "Title": "CRM",
+        "Subitle": "Escala"
+      },
+      "Code": {
+        "Title": "IA para desarrolladores",
+        "Subitle": "CodeGPT"
+      },
+      "Primeur": {
+        "Title": "Data One",
+        "Subitle": "Primeur"
+      }
+    },
     "Contact": "Contacto",
     "Language": "Idioma"
   },

@@ -14,8 +14,20 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 0);
     };
 
+    const handleResize = () => {
+      // Cierra el menú móvil si el tamaño de la pantalla es mayor a 768px
+      if (window.innerWidth > 768) {
+        setIsMenuOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const scrollToSection = (sectionId) => {
@@ -23,6 +35,7 @@ const Navbar = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" }); // Cambiado a "start"
     }
+    setIsMenuOpen(false); // Cierra el menú después de navegar
   };
 
   const NavLink = ({ section }) => (
@@ -60,19 +73,19 @@ const Navbar = () => {
           className="text-base font-helvetica hover:text-blueGreen transition-colors"
           onClick={() => {
             scrollToSection(section);
-            setIsMenuOpen(false);
           }}
         >
           {t(`NavBar.${section.charAt(0).toUpperCase() + section.slice(1)}`)}
         </button>
       ))}
-      <Dropdown />
+      <div className="w-full flex justify-center items-center">
+        <Dropdown />
+      </div>
       <LanguageSelector />
       <button
         className="px-6 py-2 bg-whiteNeurona text-darkGrayNeurona text-sm rounded-full hover:bg-blueGreen hover:text-whiteNeurona transition"
         onClick={() => {
           scrollToSection("contact");
-          setIsMenuOpen(false);
         }}
       >
         {t("NavBar.Contact")}
@@ -89,17 +102,14 @@ const Navbar = () => {
       }`}
       style={{ height: "64px" }} // Establecemos una altura fija para el navbar
     >
-      {/* Logo */}
       <img
         src={Logo}
         alt="Logo Neurona"
         className="w-36 h-10 object-contain mx-auto md:mx-0 md:ml-20"
       />
 
-      {/* Desktop Links */}
       <DesktopLinks />
 
-      {/* Contact Button for Desktop */}
       <button
         onClick={() => scrollToSection("contact")}
         className={`hidden md:block px-6 py-2 rounded-full text-sm md:text-base transition-colors duration-300 ${
@@ -111,7 +121,6 @@ const Navbar = () => {
         {t("NavBar.Contact")}
       </button>
 
-      {/* Hamburger Menu Button */}
       <button
         className="md:hidden text-whiteNeurona text-2xl"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -119,7 +128,6 @@ const Navbar = () => {
         ☰
       </button>
 
-      {/* Mobile Menu */}
       {isMenuOpen && <MobileMenu />}
     </nav>
   );

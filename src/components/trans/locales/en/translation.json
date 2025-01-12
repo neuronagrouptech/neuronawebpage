@@ -5,6 +5,21 @@
     "Services": "Services",
     "Cases": "Success Cases",
     "Partners": "Partners",
+    "Technology": {
+      "Title": "Technologies",
+      "Escala": {
+        "Title": "CRM",
+        "Subtitle": "Escala"
+      },
+      "Code": {
+        "Title": "AI Coding for Developers",
+        "Subtitle": "CodeGPT"
+      },
+      "Primeur": {
+        "Title": "Data One",
+        "Subtitle": "Primeur"
+      }
+    },
     "Contact": "Contact Us",
     "Language": "Language"
   },
@@ -95,9 +110,9 @@
     "Title": "Contact Us",
     "Name": "Name",
     "Last": "Last Name",
-    "Company":"Company (Optional)",
+    "Company": "Company (Optional)",
     "Email": "Email",
-    "Message":"Message",
+    "Message": "Message",
     "Messages": {
       "Errors": {
         "EmailSent": "You have already sent a message. Please try again later.",
