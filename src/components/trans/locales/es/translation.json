@@ -4,7 +4,7 @@
     "About": "Acerca de",
     "Services": "Servicios",
     "Cases": "Casos de Éxito",
-    "Partners": "Socios",
+    "Partners": "Partners",
     "Technology": {
       "Title": "Tecnologías",
       "Escala": {
@@ -16,7 +16,7 @@
         "Subitle": "CodeGPT"
       },
       "Primeur": {
-        "Title": "Data One",
+        "Title": "Data Integration",
         "Subitle": "Primeur"
       }
     },
