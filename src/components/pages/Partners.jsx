@@ -64,7 +64,7 @@ const Partners = () => {
     >
       {/* Title */}
       <h1 className="text-4xl md:text-6xl text-whiteNeurona mt-32 mb-12">
-        {t("NavBar.Partners")}
+        {t("Partners.Title")}
       </h1>
 
       {/* Partner Logos */}
