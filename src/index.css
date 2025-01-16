@@ -11,6 +11,10 @@ code {
   @apply font-mono;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 /* === Custom Components === */
 @layer components {
   .shadow-blueGreen {
