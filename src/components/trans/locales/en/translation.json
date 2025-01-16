@@ -6,23 +6,42 @@
     "Cases": "Success Cases",
     "Partners": "Partners",
     "Technology": {
-      "Title": "Technologies",
+      "Title": "Solutions",
       "Escala": {
-        "Title": "CRM",
-        "Subtitle": "Escala"
+        "Title": "CRM"
       },
       "Code": {
-        "Title": "AI Coding for Developers",
-        "Subtitle": "CodeGPT"
+        "Title": "AI Coding for Developers"
       },
       "Primeur": {
-        "Title": "Data Integration",
-        "Subtitle": "Primeur"
+        "Title": "Data Integration"
       }
     },
     "Contact": "Contact Us",
     "Language": "Language"
   },
+
+  "Dropdown": {
+    "Title": "Request a Demo Now!!!",
+    "Technology": {
+      "Escala": {
+        "Title": "Escala",
+        "Description": "The CRM with AI, WhatsApp, and integrated marketing tools to sell more and better. Promote your services and multiply your sales with a CRM that's truly easy to use.",
+        "ModalTitle": "Escala"
+      },
+      "CodeGPT": {
+        "Title": "CodeGPT",
+        "Description": "Explore our AI-powered Code Assistants and Copilot Generator Platform, specifically tailored for AI-assisted coding. We provide the perfect solution to make engineering teams work more efficiently with AI.",
+        "ModalTitle": "CodeGPT"
+      },
+      "Primeur": {
+        "Title": "Primeur",
+        "Description": "PRIMEUR DATA ONE® is our Hybrid Data Integration Platform, developed based on 35 years of experience managing the data of the most important Fortune 500 companies worldwide.",
+        "ModalTitle": "PRIMEUR DATA ONE® "
+      }
+    }
+  },
+
   "Home": {
     "Title1": "Revolutionizing Business",
     "Title2": "with Innovative Solutions",

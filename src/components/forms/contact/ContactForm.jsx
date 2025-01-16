@@ -8,6 +8,7 @@ const ContactForm = ({
   onSubmit,
   errorMessage,
   successMessage,
+  isSubmitting = false,
 }) => {
   const { t } = useTranslation();
 
@@ -23,6 +24,7 @@ const ContactForm = ({
             className="text-red-500 text-sm"
             role="alert"
             aria-live="assertive"
+            id="form-error"
           >
             {errorMessage}
           </div>
@@ -32,6 +34,7 @@ const ContactForm = ({
             className="text-green-500 text-sm"
             role="status"
             aria-live="polite"
+            id="form-success"
           >
             {successMessage}
           </div>
@@ -48,6 +51,8 @@ const ContactForm = ({
           value={formData.name}
           onChange={onChange}
           required
+          aria-invalid={!!errorMessage}
+          aria-describedby="form-error"
         />
 
         <FormField
@@ -58,6 +63,8 @@ const ContactForm = ({
           value={formData.lastName}
           onChange={onChange}
           required
+          aria-invalid={!!errorMessage}
+          aria-describedby="form-error"
         />
 
         <FormField
@@ -67,6 +74,7 @@ const ContactForm = ({
           placeholder={t("Contact.Company")}
           value={formData.company}
           onChange={onChange}
+          aria-describedby="form-error"
         />
 
         <FormField
@@ -78,6 +86,8 @@ const ContactForm = ({
           value={formData.email}
           onChange={onChange}
           required
+          aria-invalid={!!errorMessage}
+          aria-describedby="form-error"
         />
 
         <FormField
@@ -89,15 +99,23 @@ const ContactForm = ({
           onChange={onChange}
           isTextArea
           required
+          aria-invalid={!!errorMessage}
+          aria-describedby="form-error"
         />
       </div>
 
       {/* Botón de envío */}
       <button
         type="submit"
-        className="w-full py-2 mt-6 bg-blueGreen text-white font-bold text-lg rounded-lg shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200"
+        disabled={isSubmitting} 
+        className={`w-full py-2 mt-6 font-bold text-lg rounded-lg shadow-md focus:outline-none transition duration-200 ${
+          isSubmitting
+            ? "bg-gray-400 text-gray-700 cursor-not-allowed"
+            : "bg-blueGreen text-white hover:bg-blue-500 focus:ring-2 focus:ring-blue-400"
+        }`}
+        aria-busy={isSubmitting}
       >
-        {t("Contact.Send")}
+        {isSubmitting ? t("Contact.Sending") : t("Contact.Send")}
       </button>
     </form>
   );

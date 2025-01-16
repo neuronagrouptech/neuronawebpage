@@ -16,66 +16,75 @@ const useContactForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [isEmailSent, setIsEmailSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-
-    if (errorMessage || successMessage) {
-      setErrorMessage("");
-      setSuccessMessage("");
-    }
+    setErrorMessage("");
+    setSuccessMessage("");
   };
 
-  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-  const handleSubmit = (e, formRef) => {
-    e.preventDefault();
-
-    if (isEmailSent) {
-      setErrorMessage(t("Contact.Messages.Errors.EmailSent"));
-      return;
-    }
-
-    if (!formData.name || !formData.lastName || !formData.email || !formData.message) {
+  const validateForm = () => {
+    if (
+      !formData.name ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.message
+    ) {
       setErrorMessage(t("Contact.Messages.Errors.RequiredFields"));
-      return;
+      return false;
     }
 
     if (!validateEmail(formData.email)) {
       setErrorMessage(t("Contact.Messages.Errors.InvalidEmail"));
+      return false;
+    }
+
+    return true;
+  };
+
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const handleSubmit = async (e, formRef) => {
+    e.preventDefault();
+
+    if (isSubmitting || isEmailSent) {
+      setErrorMessage(t("Contact.Messages.Errors.EmailSent"));
       return;
     }
 
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
     setErrorMessage("");
     setSuccessMessage("");
 
-    emailjs
-      .sendForm(
+    try {
+      await emailjs.sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         formRef.current,
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setSuccessMessage(t("Contact.Messages.Success.EmailSent"));
-          setIsEmailSent(true);
-
-          setFormData({
-            name: "",
-            lastName: "",
-            email: "",
-            company: "",
-            message: "",
-          });
-
-          setTimeout(() => setIsEmailSent(false), 3600000);
-        },
-        () => {
-          setErrorMessage(t("Contact.Messages.Errors.EmailFailed"));
-        }
       );
+
+      setSuccessMessage(t("Contact.Messages.Success.EmailSent"));
+      setIsEmailSent(true);
+
+      setFormData({
+        name: "",
+        lastName: "",
+        email: "",
+        company: "",
+        message: "",
+      });
+
+      setTimeout(() => setIsEmailSent(false), 3600000);
+    } catch (error) {
+      setErrorMessage(t("Contact.Messages.Errors.EmailFailed"));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return {
@@ -84,6 +93,7 @@ const useContactForm = () => {
     handleSubmit,
     errorMessage,
     successMessage,
+    isSubmitting,
   };
 };
 

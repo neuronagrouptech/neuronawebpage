@@ -1,6 +1,6 @@
 import React from "react";
 import Escala from "../../assets/tech/escala.png";
-import Primeur from "../../assets/tech/primeur.png";
+import Primeur from "../../assets/tech/primeur-Data-One.jpg";
 import AI from "../../assets/tech/codegpt.png";
 import { useTranslation } from "react-i18next";
 
@@ -8,11 +8,11 @@ const DropdownItem = ({ title, handleClick }) => (
   <li
     className="flex items-start gap-4 px-4 py-3 hover:bg-blueGreen transition-colors cursor-pointer"
     onClick={handleClick}
-  >    <div>
-      <h3 className="text-whiteNeurona font-semibold text-base lg:text-lg">{title}</h3>
-    </div>
+  >
+    <h3 className="text-whiteNeurona font-semibold text-base lg:text-lg">{title}</h3>
   </li>
 );
+
 
 const Dropdown = ({ handleModalOpen }) => {
   const { t } = useTranslation();
@@ -20,27 +20,25 @@ const Dropdown = ({ handleModalOpen }) => {
 
   const dropdownItems = [
     {
-      title: t("NavBar.Technology.Escala.Title"),
-      description:
-        "El CRM con IA, WhatsApp y herramientas de marketing integradas para vender más y mejor. Promueve tus servicios y multiplica tus ventas con un CRM que sí es fácil de usar.",
+      title: t("Dropdown.Technology.Escala.Title"),
+      description: t("Dropdown.Technology.Escala.Description"),
       image: Escala,
-      modalTitle: "Escala",
+      modalTitle: t("Dropdown.Technology.Escala.ModalTitle"),
     },
     {
-      title: t("NavBar.Technology.Code.Title"),
-      description:
-        "Explore our AI Code Assistants and Copilot Generator Platform, tailored for AI coding. We offer the perfect solution, specifically designed to make it simple for the engineering teams to code using AI.",
+      title: t("Dropdown.Technology.CodeGPT.Title"),
+      description: t("Dropdown.Technology.CodeGPT.Description"),
       image: AI,
-      modalTitle: "CodeGPT",
+      modalTitle: t("Dropdown.Technology.CodeGPT.ModalTitle"),
     },
     {
-      title: t("NavBar.Technology.Primeur.Title"),
-      description:
-        "PRIMEUR DATA ONE® is our Hybrid Data Integration Platform, developed based on 35 years’ experience managing the data of the most important Fortune 500 companies worldwide.",
+      title: t("Dropdown.Technology.Primeur.Title"),
+      description: t("Dropdown.Technology.Primeur.Description"),
       image: Primeur,
-      modalTitle: "Primeur",
+      modalTitle: t("Dropdown.Technology.Primeur.ModalTitle"),
     },
   ];
+  
 
   return (
     <div className="relative w-full flex justify-center items-center">

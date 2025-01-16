@@ -6,22 +6,39 @@
     "Cases": "Casos de Éxito",
     "Partners": "Partners",
     "Technology": {
-      "Title": "Tecnologías",
+      "Title": "Soluciones",
       "Escala": {
-        "Title": "CRM",
-        "Subitle": "Escala"
+        "Title": "CRM"
       },
       "Code": {
-        "Title": "IA para desarrolladores",
-        "Subitle": "CodeGPT"
+        "Title": "IA para desarrolladores"
       },
       "Primeur": {
-        "Title": "Data Integration",
-        "Subitle": "Primeur"
+        "Title": "Data Integration"
       }
     },
     "Contact": "Contacto",
     "Language": "Idioma"
+  },
+  "Dropdown": {
+    "Title": "Solicite una demostración ahora!!!",
+    "Technology": {
+      "Escala": {
+        "Title": "Escala",
+        "Description": "El CRM con IA, WhatsApp y herramientas de marketing integradas para vender más y mejor. Promueve tus servicios y multiplica tus ventas con un CRM que sí es fácil de usar.",
+        "ModalTitle": "Escala"
+      },
+      "CodeGPT": {
+        "Title": "CodeGPT",
+        "Description": "Explora nuestros asistentes de código impulsados por IA y la plataforma Copilot Generator, diseñada específicamente para la codificación asistida por IA. Ofrecemos la solución perfecta para que los equipos de ingeniería trabajen de manera más eficiente con IA.",
+        "ModalTitle": "CodeGPT"
+      },
+      "Primeur": {
+        "Title": "Primeur",
+        "Description": "PRIMEUR DATA ONE® es nuestra plataforma de integración de datos híbrida, desarrollada con base en 35 años de experiencia gestionando los datos de las empresas más importantes de Fortune 500 en todo el mundo.",
+        "ModalTitle": "PRIMEUR DATA ONE® "
+      }
+    }
   },
   "Home": {
     "Title1": "Revolucionando los Negocios",
@@ -108,7 +125,7 @@
   },
   "Contact": {
     "Title": "Contáctanos",
-    "Description":"¿Interesado en nuestras soluciones? Completa el formulario para solicitar una demo o más información sobre cómo podemos ayudarte a alcanzar tus objetivos.",
+    "Description": "¿Interesado en nuestras soluciones? Completa el formulario para solicitar una demo o más información sobre cómo podemos ayudarte a alcanzar tus objetivos.",
     "Name": "Nombre",
     "Last": "Apellido",
     "Company": "Empresa (Opcional)",
