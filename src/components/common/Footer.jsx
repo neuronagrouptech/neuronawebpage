@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../assets/LOGO.avif";
 import { Linkedin, Instagram, Youtube } from "lucide-react";
+import Flag from "./utills/Flag";
 
 const Footer = () => {
   const scrollToSection = (sectionId) => {
@@ -13,133 +14,124 @@ const Footer = () => {
     }
   };
 
+  const sections = [
+    {
+      title: "COMPANY",
+      links: [
+        { label: "Home", sectionId: "home" },
+        { label: "About", sectionId: "about" },
+        { label: "Services", sectionId: "services" },
+        { label: "Success Cases", sectionId: "partners" },
+        { label: "Partners", sectionId: "partners" },
+      ],
+    },
+    {
+      title: "LEGAL",
+      links: [
+        { label: "Terms & Conditions", sectionId: "terms" },
+        { label: "Privacy Policy", sectionId: "privacy" },
+      ],
+    },
+  ];
+
+  const socialLinks = [
+    {
+      href: "https://www.linkedin.com/company/neurona-company/",
+      label: "LinkedIn",
+      icon: <Linkedin className="w-5 h-5 mr-2 transition" />,
+      hoverColor: "hover:text-[#0A66C2]",
+    },
+    {
+      href: "https://www.instagram.com/neurona.global/",
+      label: "Instagram",
+      icon: <Instagram className="w-5 h-5 mr-2 transition" />,
+      hoverColor: "hover:text-[#E4405F]",
+    },
+    {
+      href: "https://www.youtube.com/@NeuronaEnterprise/videos",
+      label: "YouTube",
+      icon: <Youtube className="w-5 h-5 mr-2 transition" />,
+      hoverColor: "hover:text-[#FF0000]",
+    },
+  ];
+
+  const locations = [
+    { city: "Valparaiso", country: "Chile", flag: "CL" },
+    { city: "Dubai", country: "United Arab Emirates", flag: "AE" },
+    { city: "Tallin", country: "Estonia", flag: "EE" },
+  ];
+
   return (
-    <footer className="bg-darkLeft text-whiteNeurona py-10 relative z-10">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Logo Section */}
-        <div className="flex flex-col items-start">
-          <img
-            src={Logo}
-            alt="LogoNeurona"
-            className="w-80 h-42 object-contain mb-4 cursor-pointer"
-            onClick={() => scrollToSection("home")}
-          />
-        </div>
+    <footer className="bg-darkLeft text-whiteNeurona py-8 relative z-10">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Logo Section */}
+          <div className="flex flex-col items-start ">
+            <img
+              src={Logo}
+              alt="Logo Neurona"
+              className="w-96 h-48 object-contain cursor-pointer"
+              onClick={() => scrollToSection("home")}
+            />
+          </div>
 
-        {/* Company Section */}
-        <div className="relative z-10">
-          <h4 className="text-lg font-bold mb-4 font-sans">COMPANY</h4>
-          <ul className="space-y-2">
-            <li>
-              <button
-                onClick={() => scrollToSection("home")}
-                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
-              >
-                Home
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
-              >
-                About
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
-              >
-                Services
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => scrollToSection("partners")}
-                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
-              >
-                Success Cases
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => scrollToSection("partners")}
-                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
-              >
-                Partners
-              </button>
-            </li>
-          </ul>
-        </div>
+          {/* Sections */}
+          {sections.map((section) => (
+            <div key={section.title} className="flex flex-col">
+              <h4 className="text-lg font-bold mb-4 font-sans">{section.title}</h4>
+              <ul className="space-y-2">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <button
+                      onClick={() => scrollToSection(link.sectionId)}
+                      className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
+                    >
+                      {link.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
-        {/* Legal Section */}
-        <div className="relative z-10">
-          <h4 className="text-lg font-bold mb-4 font-sans">LEGAL</h4>
-          <ul className="space-y-2">
-            <li>
-              <button
-                onClick={() => scrollToSection("terms")}
-                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
-              >
-                Terms & Conditions
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => scrollToSection("privacy")}
-                className="hover:text-blueGreen font-sans transition text-left cursor-pointer"
-              >
-                Privacy Policy
-              </button>
-            </li>
-          </ul>
-        </div>
+          {/* Social Section */}
+          <div className="flex flex-col">
+            <h4 className="text-lg font-bold mb-4 font-sans">SOCIAL</h4>
+            <ul className="space-y-2">
+              {socialLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.label}
+                    className={`inline-flex items-center font-sans transition cursor-pointer group ${link.hoverColor}`}
+                  >
+                    {React.cloneElement(link.icon, {
+                      className: `w-5 h-5 mr-2 transition text-white group-hover:text-current`,
+                    })}
+                    <span className="group-hover:underline">{link.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        {/* Social Section */}
-        <div className="relative z-10">
-          <h4 className="text-lg font-bold mb-4 font-sans">SOCIAL</h4>
-          <ul className="space-y-2">
-            <li>
-              <a
-                href="https://www.linkedin.com/company/neurona-company/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center font-sans transition cursor-pointer group"
-              >
-                <Linkedin className="w-5 h-5 mr-2 transition group-hover:text-[#0A66C2]" />
-                <span className="transition group-hover:text-[#0A66C2]">
-                  LinkedIn
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/neurona.global/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center font-sans transition cursor-pointer group"
-              >
-                <Instagram className="w-5 h-5 mr-2 transition group-hover:text-[#E4405F]" />
-                <span className="transition group-hover:text-[#E4405F]">
-                  Instagram
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/@NeuronaEnterprise/videos"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center font-sans transition cursor-pointer group"
-              >
-                <Youtube className="w-5 h-5 mr-2 transition group-hover:text-[#FF0000]" />
-                <span className="transition group-hover:text-[#FF0000]">
-                  YouTube
-                </span>
-              </a>
-            </li>
-          </ul>
+          {/* Locations Section */}
+          <div className="flex flex-col">
+            <h4 className="text-lg font-bold mb-4 font-sans">LOCATIONS</h4>
+            <ul className="space-y-2">
+              {locations.map((location) => (
+                <li key={`${location.city}-${location.country}`} className="flex items-center space-x-2">
+                  <Flag country={location.flag} />
+                  <span>
+                    {location.city ? `${location.city}, ` : ""}
+                    {location.country}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
