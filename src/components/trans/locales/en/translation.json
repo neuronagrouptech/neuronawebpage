@@ -108,6 +108,7 @@
   },
   "Contact": {
     "Title": "Contact Us",
+    "Description": "Interested in our solutions? Fill out the form to request a demo or learn more about how we can help you achieve your goals",
     "Name": "Name",
     "Last": "Last Name",
     "Company": "Company (Optional)",

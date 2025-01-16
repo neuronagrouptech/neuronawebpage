@@ -108,6 +108,7 @@
   },
   "Contact": {
     "Title": "Contáctanos",
+    "Description":"¿Interesado en nuestras soluciones? Completa el formulario para solicitar una demo o más información sobre cómo podemos ayudarte a alcanzar tus objetivos.",
     "Name": "Nombre",
     "Last": "Apellido",
     "Company": "Empresa (Opcional)",

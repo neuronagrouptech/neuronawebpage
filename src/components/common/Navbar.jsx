@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import DesktopLinks from "../common/navbar/DesktopLinks";
 import MobileMenu from "../common/navbar/MobileMenu";
 import Modal from "../common/utills/Modal";
-import Contact from "../forms/Contact";
+import Contact from "../pages/Contact";
 import { useTranslation } from "react-i18next";
 import Logo from "../assets/LOGO.avif";
 
