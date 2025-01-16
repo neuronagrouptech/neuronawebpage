@@ -1,15 +1,15 @@
 import React, { useRef, useEffect } from "react";
 
-import Navbar from './components/common/Navbar';
+import Navbar from "./components/common/Navbar";
 
 import Home from "./components/pages/Home";
-import About from  "./components/pages/About";
-import Services from  "./components/pages/Services";
-import Cases from  "./components/pages/Cases";
-import Partners from  "./components/pages/Partners";
-import Contact from  "./components/forms/Contact";
-import Footer from  "./components/common/Footer";
-import Copyright from  "./components/common/Copyright";
+import About from "./components/pages/About";
+import Services from "./components/pages/Services";
+import Cases from "./components/pages/Cases";
+import Partners from "./components/pages/Partners";
+import Contact from "./components/pages/Contact";
+import Footer from "./components/common/Footer";
+import Copyright from "./components/common/Copyright";
 import setupParticleAnimation from "./components/assets/home/particleAnimation";
 import "./index.css";
 

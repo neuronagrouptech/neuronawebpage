@@ -18,34 +18,39 @@ const About = () => {
   });
 
   return (
-    <div id="about" className="text-whiteNeurona font-helvetica">
-      {/* Our Vision Section */}
-      <section ref={refVision} className="max-w-7xl mx-auto px-10 py-20">
-        <div className="flex flex-col md:flex-row items-center relative gap-16">
-          {/* Text Content */}
+    <section
+      id="about"
+      className="text-whiteNeurona font-sans pt-28"
+    >
+      {/* Contenedor General */}
+      <div className="min-h-screen max-w-7xl mx-auto px-6 md:px-10 py-20 flex flex-col gap-32">
+        {/* Our Vision */}
+        <div
+          ref={refVision}
+          className="flex flex-col md:flex-row items-center gap-12"
+        >
+          {/* Texto */}
           <div
-            className={`transition-transform duration-700 ease-out ${
+            className={`flex-1 transition-transform duration-700 ease-out ${
               inViewVision
                 ? "translate-x-0 opacity-100"
                 : "-translate-x-10 opacity-0"
             }`}
           >
-            <h2 className="text-5xl font-helvetica mb-6 text-blueGreen">
-              {" "}
+            <h2 className="text-4xl md:text-5xl font-sans mb-6 text-blueGreen">
               {t("About.OurVision.Title")}
             </h2>
-            <h3 className="text-3xl font-helvetica mb-8 text-whiteNeurona">
-              {" "}
+            <h3 className="text-2xl md:text-3xl font-sans mb-8">
               {t("About.OurVision.Subtitle")}
             </h3>
-            <p className="text-whiteNeurona leading-relaxed mb-6 max-w-3xl text-lg">
+            <p className="text-base md:text-lg leading-relaxed max-w-3xl">
               {t("About.OurVision.Content")}
             </p>
           </div>
 
-          {/* Image Content */}
+          {/* Imagen */}
           <div
-            className={`transition-transform duration-700 ease-out ${
+            className={`flex-1 transition-transform duration-700 ease-out ${
               inViewVision
                 ? "translate-x-0 opacity-100"
                 : "translate-x-10 opacity-0"
@@ -58,31 +63,34 @@ const About = () => {
             />
           </div>
         </div>
-      </section>
 
-      {/* Why Neurona Section */}
-      <section ref={refWhy} className="max-w-7xl mx-auto px-10 py-20">
-        <div className="flex flex-col md:flex-row-reverse items-center relative gap-16">
+        {/* Why Neurona */}
+        <div
+          ref={refWhy}
+          className="flex flex-col md:flex-row-reverse items-center gap-12"
+        >
+          {/* Texto */}
           <div
-            className={`transition-transform duration-700 ease-out ${
+            className={`flex-1 transition-transform duration-700 ease-out ${
               inViewWhy
                 ? "translate-x-0 opacity-100"
                 : "translate-x-10 opacity-0"
             }`}
           >
-            <h2 className="text-right  text-5xl font-helvetica mb-6 text-blueGreen">
+            <h2 className="text-right text-4xl md:text-5xl font-sans font-bold mb-6 text-blueGreen">
               {t("About.WhyNeurona.Title")}
             </h2>
-            <h3 className="text-right  text-3xl font-helvetica mb-8 text-whiteNeurona">
+            <h3 className="text-right text-2xl md:text-3xl font-sans font-bold mb-8">
               {t("About.WhyNeurona.Subtitle")}
             </h3>
-            <p className="text-whiteNeurona leading-relaxed mb-6 max-w-3xl text-lg">
+            <p className="text-base md:text-lg leading-relaxed max-w-3xl">
               {t("About.WhyNeurona.Content")}
             </p>
           </div>
 
+          {/* Imagen */}
           <div
-            className={`transition-transform duration-700 ease-out ${
+            className={`flex-1 transition-transform duration-700 ease-out ${
               inViewWhy
                 ? "translate-x-0 opacity-100"
                 : "-translate-x-10 opacity-0"
@@ -95,8 +103,8 @@ const About = () => {
             />
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
