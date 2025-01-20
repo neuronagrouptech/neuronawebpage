@@ -6,7 +6,6 @@ const useContactForm = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    // Inicializar EmailJS
     emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
   }, []);
 
@@ -53,18 +52,23 @@ const useContactForm = () => {
 
   const handleSubmit = async (e, formRef) => {
     e.preventDefault();
-
+  
+    if (!formRef.current) {
+      setErrorMessage(t("Contact.Messages.Errors.FormNotFound"));
+      return;
+    }
+  
     if (isSubmitting || isEmailSent) {
       setErrorMessage(t("Contact.Messages.Errors.EmailSent"));
       return;
     }
-
+  
     if (!validateForm()) return;
-
+  
     setIsSubmitting(true);
     setErrorMessage("");
     setSuccessMessage("");
-
+  
     try {
       await emailjs.sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -72,10 +76,10 @@ const useContactForm = () => {
         formRef.current,
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       );
-
+  
       setSuccessMessage(t("Contact.Messages.Success.EmailSent"));
       setIsEmailSent(true);
-
+  
       setFormData({
         name: "",
         lastName: "",
@@ -83,15 +87,15 @@ const useContactForm = () => {
         company: "",
         message: "",
       });
-
+  
       setTimeout(() => setIsEmailSent(false), 3600000);
     } catch (error) {
-      console.error('Error sending email:', error);
       setErrorMessage(t("Contact.Messages.Errors.EmailFailed"));
     } finally {
       setIsSubmitting(false);
     }
   };
+  
 
   return {
     formData,

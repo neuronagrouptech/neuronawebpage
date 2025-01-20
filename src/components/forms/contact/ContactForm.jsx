@@ -9,11 +9,13 @@ const ContactForm = ({
   errorMessage,
   successMessage,
   isSubmitting = false,
+  formRef,
 }) => {
   const { t } = useTranslation();
 
   return (
     <form
+      ref={formRef} 
       onSubmit={onSubmit}
       className="w-full p-6 bg-transparent rounded-xl shadow-none transform transition-transform duration-1000"
     >
@@ -107,7 +109,7 @@ const ContactForm = ({
       {/* Botón de envío */}
       <button
         type="submit"
-        disabled={isSubmitting} 
+        disabled={isSubmitting}
         className={`w-full py-2 mt-6 font-bold text-lg rounded-lg shadow-md focus:outline-none transition duration-200 ${
           isSubmitting
             ? "bg-gray-400 text-gray-700 cursor-not-allowed"

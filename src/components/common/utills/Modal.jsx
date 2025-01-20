@@ -97,6 +97,7 @@ const Modal = ({ isOpen, onClose, image, title, description }) => {
                 onSubmit={(e) => handleSubmit(e, formRef)}
                 errorMessage={errorMessage}
                 successMessage={successMessage}
+                formRef={formRef}
               />
             </div>
           </div>
