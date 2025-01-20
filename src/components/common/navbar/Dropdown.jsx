@@ -20,19 +20,22 @@ const Dropdown = ({ handleModalOpen }) => {
 
   const dropdownItems = [
     {
-      title: t("Dropdown.Technology.Escala.Title"),
+      title: t("NavBar.Technology.Escala.Title"),
+      subtitle: t("Dropdown.Technology.Escala.Title"),
       description: t("Dropdown.Technology.Escala.Description"),
       image: Escala,
       modalTitle: t("Dropdown.Technology.Escala.ModalTitle"),
     },
     {
-      title: t("Dropdown.Technology.CodeGPT.Title"),
+      title: t("NavBar.Technology.Code.Title"),
+      subtitle: t("Dropdown.Technology.CodeGPT.Title"),
       description: t("Dropdown.Technology.CodeGPT.Description"),
       image: AI,
       modalTitle: t("Dropdown.Technology.CodeGPT.ModalTitle"),
     },
     {
-      title: t("Dropdown.Technology.Primeur.Title"),
+      title: t("NavBar.Technology.Primeur.Title"),
+      subtitle: t("Dropdown.Technology.Primeur.Title"),
       description: t("Dropdown.Technology.Primeur.Description"),
       image: Primeur,
       modalTitle: t("Dropdown.Technology.Primeur.ModalTitle"),
