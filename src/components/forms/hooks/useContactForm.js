@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 
 const useContactForm = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    // Inicializar EmailJS
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -81,6 +86,7 @@ const useContactForm = () => {
 
       setTimeout(() => setIsEmailSent(false), 3600000);
     } catch (error) {
+      console.error('Error sending email:', error);
       setErrorMessage(t("Contact.Messages.Errors.EmailFailed"));
     } finally {
       setIsSubmitting(false);
