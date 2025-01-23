@@ -1,11 +1,12 @@
 import React from "react";
 import Solutions from "./Solutions";
 import LanguageSelector from "../../utils/LanguajeSelector";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
 const DesktopLinks = ({ handleModalOpen, t, isScrolled }) => (
   <ul className="hidden h-10 items-center md:flex space-x-6">
-    {["home", "about", "services", "cases", "partners", "academia"].map((section) => (
+    {/* Mapeo dinámico de secciones */}
+    {["home", "about", "services", "cases", "partners"].map((section) => (
       <li key={section}>
         <button
           onClick={() =>
@@ -21,20 +22,25 @@ const DesktopLinks = ({ handleModalOpen, t, isScrolled }) => (
         </button>
       </li>
     ))}
+    {/* Soluciones */}
     <li>
       <Solutions handleModalOpen={handleModalOpen} />
     </li>
+    {/* Link a la página de Cursos */}
     <li>
       <Link
         to="/courses"
         className="text-whiteNeurona text-sm md:text-base font-helvetica hover:text-blueGreen transition-colors"
       >
-        {t("NavBar.Academia")}
+       {/*  {t("NavBar.Academia")} */}
+       Academia
       </Link>
     </li>
+    {/* Selector de Idioma */}
     <li>
       <LanguageSelector />
     </li>
+    {/* Botón de Contacto */}
     <li>
       <button
         onClick={() =>

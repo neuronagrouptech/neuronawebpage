@@ -20,9 +20,11 @@ const Navbar = () => {
       }
     };
 
+    // Agregar eventos
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
+    // Cleanup de eventos
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
@@ -40,8 +42,6 @@ const Navbar = () => {
     setModalContent(null);
   };
 
-  const closeMenu = () => setIsMenuOpen(false);
-
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-30 px-8 py-5 flex items-center justify-between transition-colors duration-300 ${
@@ -56,14 +56,14 @@ const Navbar = () => {
         className="w-36 h-10 object-contain mx-auto md:mx-0 md:ml-20"
       />
 
-      {/* Desktop Links */}
+      {/* Enlaces para escritorio */}
       <DesktopLinks
         handleModalOpen={handleModalOpen}
         t={t}
         isScrolled={isScrolled}
       />
 
-      {/* Mobile Menu Button */}
+      {/* Botón de menú móvil */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         className="md:hidden text-whiteNeurona text-2xl"
@@ -71,12 +71,12 @@ const Navbar = () => {
         ☰
       </button>
 
-      {/* Mobile Menu */}
+      {/* Menú móvil */}
       {isMenuOpen && (
         <MobileMenu
           handleModalOpen={handleModalOpen}
           t={t}
-          closeMenu={closeMenu}
+          closeMenu={() => setIsMenuOpen(false)}
         />
       )}
 
