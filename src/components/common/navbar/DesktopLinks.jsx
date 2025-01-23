@@ -3,17 +3,12 @@ import Solutions from "./Solutions";
 import LanguageSelector from "../../utils/LanguajeSelector";
 import { Link } from "react-router-dom";
 
-const DesktopLinks = ({ handleModalOpen, t, isScrolled }) => (
+const DesktopLinks = ({ handleModalOpen, t, isScrolled, handleScrollToSection  }) => (
   <ul className="hidden h-10 items-center md:flex space-x-6">
-    {/* Mapeo dinámico de secciones */}
     {["home", "about", "services", "cases", "partners"].map((section) => (
       <li key={section}>
         <button
-          onClick={() =>
-            document.getElementById(section)?.scrollIntoView({
-              behavior: "smooth",
-            })
-          }
+          onClick={() => handleScrollToSection(section)}
           className={`text-whiteNeurona text-sm md:text-base font-helvetica hover:text-blueGreen transition-colors ${
             isScrolled ? "text-white" : ""
           }`}
@@ -22,11 +17,9 @@ const DesktopLinks = ({ handleModalOpen, t, isScrolled }) => (
         </button>
       </li>
     ))}
-    {/* Soluciones */}
     <li>
       <Solutions handleModalOpen={handleModalOpen} />
     </li>
-    {/* Link a la página de Cursos */}
     <li>
       <Link
         to="/courses"
@@ -36,18 +29,12 @@ const DesktopLinks = ({ handleModalOpen, t, isScrolled }) => (
        Academia
       </Link>
     </li>
-    {/* Selector de Idioma */}
     <li>
       <LanguageSelector />
     </li>
-    {/* Botón de Contacto */}
     <li>
       <button
-        onClick={() =>
-          document.getElementById("contact")?.scrollIntoView({
-            behavior: "smooth",
-          })
-        }
+          onClick={() => handleScrollToSection("contact")}
         className={`hidden md:block px-6 py-2 rounded-full text-sm md:text-base transition-colors duration-300 ${
           isScrolled
             ? "bg-darkLeft text-whiteNeurona hover:bg-blueGreen"
