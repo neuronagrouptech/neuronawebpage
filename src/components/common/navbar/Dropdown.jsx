@@ -1,8 +1,5 @@
-import React from "react";
-import Escala from "../../assets/tech/escala.png";
-import Primeur from "../../assets/tech/primeur-Data-One.jpg";
-import AI from "../../assets/tech/codegpt.png";
-import { useTranslation } from "react-i18next";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const DropdownItem = ({ title, handleClick }) => (
   <li
@@ -13,35 +10,8 @@ const DropdownItem = ({ title, handleClick }) => (
   </li>
 );
 
-
-const Dropdown = ({ handleModalOpen }) => {
-  const { t } = useTranslation();
-  const [isOpen, setIsOpen] = React.useState(false);
-
-  const dropdownItems = [
-    {
-      title: t("NavBar.Technology.Escala.Title"),
-      subtitle: t("Dropdown.Technology.Escala.Title"),
-      description: t("Dropdown.Technology.Escala.Description"),
-      image: Escala,
-      modalTitle: t("Dropdown.Technology.Escala.ModalTitle"),
-    },
-    {
-      title: t("NavBar.Technology.Code.Title"),
-      subtitle: t("Dropdown.Technology.CodeGPT.Title"),
-      description: t("Dropdown.Technology.CodeGPT.Description"),
-      image: AI,
-      modalTitle: t("Dropdown.Technology.CodeGPT.ModalTitle"),
-    },
-    {
-      title: t("NavBar.Technology.Primeur.Title"),
-      subtitle: t("Dropdown.Technology.Primeur.Title"),
-      description: t("Dropdown.Technology.Primeur.Description"),
-      image: Primeur,
-      modalTitle: t("Dropdown.Technology.Primeur.ModalTitle"),
-    },
-  ];
-  
+const Dropdown = ({ title, items, handleItemClick }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="relative w-full flex justify-center items-center">
@@ -50,7 +20,7 @@ const Dropdown = ({ handleModalOpen }) => {
         className="text-whiteNeurona font-medium text-base py-3 px-4 w-auto text-center rounded-lg hover:shadow-lg flex items-center justify-center transition-colors bg-transparent"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span>{t("NavBar.Technology.Title")}</span>
+        <span>{title}</span>
         <svg
           className={`fill-current h-5 w-5 transform transition-transform ${
             isOpen ? "rotate-180" : "rotate-0"
@@ -66,15 +36,14 @@ const Dropdown = ({ handleModalOpen }) => {
       {isOpen && (
         <div className="absolute top-full left-1/2 transform -translate-x-1/2 bg-darkLeft bg-opacity-95 z-50 rounded-lg shadow-lg">
           <ul className="w-72 rounded-lg shadow-lg">
-            {dropdownItems.map((item) => (
+            {items.map((item) => (
               <DropdownItem
                 key={item.modalTitle}
                 title={item.title}
-                description={item.description}
-                image={item.image}
-                handleClick={() =>
-                  handleModalOpen(item.modalTitle, item.description, item.image)
-                }
+                handleClick={() => {
+                  handleItemClick(item);
+                  setIsOpen(false);
+                }}
               />
             ))}
           </ul>
@@ -82,6 +51,20 @@ const Dropdown = ({ handleModalOpen }) => {
       )}
     </div>
   );
+};
+
+Dropdown.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      subtitle: PropTypes.string,
+      description: PropTypes.string,
+      image: PropTypes.string,
+      modalTitle: PropTypes.string,
+    })
+  ).isRequired,
+  handleItemClick: PropTypes.func.isRequired,
 };
 
 export default Dropdown;
