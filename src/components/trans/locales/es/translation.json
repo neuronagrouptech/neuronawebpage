@@ -61,47 +61,47 @@
   "Services": {
     "Title": "Nuestros Servicios",
     "AIDataStudio": {
-      "Title": "Estudio de IA y Datos",
-      "Subtitle": "Proyectos de IA Generativa y Aprendizaje Automático",
+      "Title": "Consultoría en Inteligencia Artificial y Machine Learning",
+      "Subtitle": "Desarrollo de modelos ML personalizados",
       "Details": [
-        "Reducir costos eliminando la necesidad de equipos técnicos internos.",
-        "Soluciones escalables que se adaptan a las necesidades de tu negocio.",
-        "Acceso experto a la IA y la ciencia de datos sin capacitación adicional."
+        "Crear modelos de IA adaptados a problemas específicos, como predicción de demanda, optimización de procesos o análisis de datos complejos.",
+        "Implementación de IA ética: Ayudar a las empresas a integrar sistemas de inteligencia artificial que cumplan con normativas éticas y regulatorias.",
+        "Optimización de sistemas existentes: Mejorar la precisión, velocidad y eficiencia de los modelos de machine learning ya implementados."
       ]
     },
     "InnovationProductStudio": {
-      "Title": "Estudio de Innovación y Producto",
-      "Subtitle": "Socio de Innovación de Crecimiento como Servicio (GIPaaS)",
+      "Title": "Consultoría y Desarrollo de Productos Digitales Inteligentes",
+      "Subtitle": "Desarrollo de Productos Inteligentes Personalizados",
       "Details": [
-        "Orientación estratégica para descubrir oportunidades de crecimiento y expansión.",
-        "Habilitación de innovación con nuevas tecnologías, procesos y productos.",
-        "Soporte continuo como un socio a largo plazo, ayudándote a mantenerte a la vanguardia."
+        "Soluciones únicas que resuelvan problemas complejos de acuerdo a cada necesidad.",
+        "Aplicaciones con inteligencia artificial integrada y realidad virtual.",
+        "Modelos predictivos para optimización de procesos de negocios.",
+        "Validación y Prototipado: Consultoría para evaluar la viabilidad técnica de ideas utilizando tecnologías avanzadas.",
+        "Desarrollo de prototipos funcionales que permitan validar hipótesis en escenarios reales."
       ]
     },
     "SoftwareDevelopmentStudio": {
-      "Title": "Estudio de Desarrollo de Software",
-      "Subtitle": "Ingeniero de Software como Servicio (SEaaS)",
+      "Title": "Consultoría y Desarrollo de Software Especializado",
+      "Subtitle": "Plataformas SaaS (Software as a Service)",
       "Details": [
-        "Compromiso flexible sin compromisos a largo plazo.",
-        "Velocidad y eficiencia para incorporar talento rápidamente y comenzar proyectos.",
-        "Base global de talento para encontrar los mejores ingenieros según tus necesidades."
+        "Desarrollo de plataformas que integren deep tech para resolver problemas específicos.",
+        "Desarrollo de Plataformas Gaming y VR/AR XR.",
+        "Digital Twins: Construcción de representaciones virtuales para emular sistemas reales.",
+        "Productos IoT Inteligentes: Integración de sensores inteligentes con IA para optimizar operaciones.",
+        "Integración de dispositivos médicos avanzados o monitoreo industrial en tiempo real."
       ]
     },
     "EnterpriseTechArchitecture": {
-      "Title": "Servicios de Arquitectura Empresarial y Tecnológica",
-      "Subtitle": "Planificación estratégica, gestión de datos y soluciones digitales avanzadas.",
+      "Title": "Consultoría Estratégica para Implementación Tecnológica",
+      "Subtitle": "Preparación para tecnologías disruptivas",
       "Details": [
-        "Arquitectura Empresarial: Habilitación de la planificación estratégica y ejecución con un enfoque preciso, trazable y eficiente.",
-        "Arquitectura de Datos: Diseño de arquitecturas de datos escalables y seguras, optimizando la gestión y el análisis de datos.",
-        "Gobernanza de Datos: Implementación de marcos que garanticen calidad, seguridad y privacidad alineados con regulaciones internacionales.",
-        "Configuración de Arquitectura: Establecimiento de prácticas de Arquitectura Empresarial para consistencia y estandarización.",
-        "Documentación Técnica de Arquitectura: Desarrollo de repositorios centralizados para visiones holísticas organizacionales.",
-        "Arquitectura de Referencia: Maximización de la estandarización en habilitadores tecnológicos para el diseño eficiente de soluciones.",
-        "Gobernanza de Arquitectura Empresarial: Establecimiento de modelos de gobernanza para adoptar prácticas arquitectónicas.",
-        "Arquitectura Digital: Implementación de soluciones digitales avanzadas con tecnologías disruptivas."
+        "Evaluación de viabilidad: Determinar si una tecnología deep tech es viable para resolver un problema específico.",
+        "Roadmap tecnológico: Diseñar una hoja de ruta para implementar tecnologías avanzadas en la empresa.",
+        "Educación y capacitación: Formar equipos internos para adoptar y usar tecnologías deep tech."
       ]
     }
   },
+
   "Cases": {
     "Title": "Casos de Éxito",
     "Case1": {

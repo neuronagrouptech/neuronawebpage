@@ -63,44 +63,43 @@
   "Services": {
     "Title": "Services",
     "AIDataStudio": {
-      "Title": "AI & Data Studio",
-      "Subtitle": "Gen AI & Machine Learning Projects",
+      "Title": "Artificial Intelligence and Machine Learning Consulting",
+      "Subtitle": "Development of Customized ML Models",
       "Details": [
-        "Cut Costs by eliminating the need for in-house tech teams.",
-        "Scalable Solutions that adapt to your business needs.",
-        "Expert Access to AI and data science without additional training."
+        "Create AI models tailored to specific problems, such as demand forecasting, process optimization, or complex data analysis.",
+        "Ethical AI Implementation: Help companies integrate artificial intelligence systems that comply with ethical and regulatory standards.",
+        "Optimization of Existing Systems: Improve the accuracy, speed, and efficiency of already implemented machine learning models."
       ]
     },
     "InnovationProductStudio": {
-      "Title": "Innovation & Product Studio",
-      "Subtitle": "Growth Innovation Partner as a Service (GIPaaS)",
+      "Title": "Consulting and Development of Intelligent Digital Products",
+      "Subtitle": "Development of Customized Intelligent Products",
       "Details": [
-        "Strategic Guidance to uncover growth and expansion opportunities.",
-        "Innovation Enablement with new tech, processes, and products.",
-        "Ongoing Support as a long-term partner, helping you stay ahead of the curve."
+        "Unique solutions that solve complex problems according to each need.",
+        "Applications with integrated artificial intelligence and virtual reality.",
+        "Predictive models for business process optimization.",
+        "Validation and Prototyping: Consulting to assess the technical feasibility of ideas using advanced technologies.",
+        "Development of functional prototypes that allow hypothesis validation in real-world scenarios."
       ]
     },
     "SoftwareDevelopmentStudio": {
-      "Title": "Software Development Studio",
-      "Subtitle": "Software Engineer as a Service (SEaaS)",
+      "Title": "Specialized Software Consulting and Development",
+      "Subtitle": "SaaS (Software as a Service) Platforms",
       "Details": [
-        "Flexible Engagement with no long-term commitments.",
-        "Speed & Efficiency to quickly onboard talent and start projects.",
-        "Global Talent Pool to find the best engineers for your needs."
+        "Development of platforms that integrate deep tech to solve specific problems.",
+        "Development of Gaming Platforms and VR/AR XR.",
+        "Digital Twins: Construction of virtual representations to emulate real systems.",
+        "Smart IoT Products: Integration of smart sensors with AI to optimize operations.",
+        "Integration of advanced medical devices or real-time industrial monitoring."
       ]
     },
     "EnterpriseTechArchitecture": {
-      "Title": "Enterprise and Technology Architecture Services",
-      "Subtitle": "Strategic planning, data management, and advanced digital solutions.",
+      "Title": "Strategic Consulting for Technological Implementation",
+      "Subtitle": "Preparation for Disruptive Technologies",
       "Details": [
-        "Business Architecture: Enabling strategic planning and execution with a precise, traceable, and efficient approach.",
-        "Data Architecture: Designing scalable and secure data architectures, optimizing data management and analytics.",
-        "Data Governance: Implementing frameworks ensuring quality, security, and privacy aligned with international regulations.",
-        "Architecture Setup: Establishing Enterprise Architecture practices for consistency and standardization.",
-        "Technical Architecture Documentation: Developing centralized repositories for holistic organizational views.",
-        "Reference Architecture: Maximizing standardization in technological enablers for efficient solution design.",
-        "Enterprise Architecture Governance: Establishing governance models to adopt architectural practices.",
-        "Digital Architecture: Implementing advanced digital solutions with disruptive technologies."
+        "Feasibility Assessment: Determine if deep tech is viable for solving a specific problem.",
+        "Technological Roadmap: Design a roadmap to implement advanced technologies in the company.",
+        "Education and Training: Train internal teams to adopt and use deep tech technologies."
       ]
     }
   },
