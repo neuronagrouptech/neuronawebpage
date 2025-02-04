@@ -27,18 +27,21 @@ const DesktopLinks = ({ handleModalOpen, t, isScrolled }) => (
       <LanguageSelector />
     </li>
     <li>
-      <button
-        onClick={() => document.getElementById("contact")?.scrollIntoView({
-          behavior: "smooth",
-        })}
-        className={`hidden md:block px-6 py-2 rounded-full text-sm md:text-base transition-colors duration-300 ${
-          isScrolled
-            ? "bg-darkLeft text-whiteNeurona hover:bg-blueGreen"
-            : "bg-whiteNeurona text-darkGrayNeurona hover:bg-blueGreen hover:text-whiteNeurona"
-        }`}
-      >
-        {t("NavBar.Contact")}
-      </button>
+    <button
+  onClick={() => {
+    if (typeof document !== "undefined") {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+  aria-label="Contact"
+  className={`hidden md:block px-6 py-2 rounded-full text-sm md:text-base transition-all duration-300 transform hover:scale-105 shadow-lg border-2 ${
+    isScrolled
+      ? "bg-darkLeft text-whiteNeurona hover:bg-blueGreen"
+      : "bg-whiteNeurona text-darkGrayNeurona border-whiteNeurona hover:bg-blueGreen hover:text-whiteNeurona"
+  }`}
+>
+  {t("NavBar.Contact")}
+</button>
     </li>
   </ul>
 );

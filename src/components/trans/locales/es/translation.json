@@ -17,8 +17,28 @@
         "Title": "Integración de Datos"
       }
     },
-    "Contact": "Contacto",
+    "Contact": "Reserva una Consulta Gratuita",
     "Language": "Idioma"
+  },
+  "Home": {
+    "Button": "Mira nuestros servicios!",
+    "messages": [
+      {
+        "title": "Potencia tu Empresa con IA de Vanguardia",
+        "subtitle": "Soluciones Exclusivas de Neurona para Resultados Extraordinarios",
+        "details": "¡Agenda una Demostración Ahora!"
+      },
+      {
+        "title": "Innovación Radical para Negocios Visionarios",
+        "subtitle": "Transformamos Industrias con IA de Última Generación",
+        "details": "¡Agenda una Consultoría GRATIS con Nosotros!"
+      },
+      {
+        "title": "Innovación que Impulsa Negocios",
+        "subtitle": "Soluciones de Alto Impacto para Resultados que Marcan la Diferencia",
+        "details": "¡Transforma tu Negocio con Tecnología Disruptiva!"
+      }
+    ]
   },
   "Dropdown": {
     "Title": "Solicite una demostración ahora!!!",
@@ -39,12 +59,6 @@
         "ModalTitle": "PRIMEUR DATA ONE® "
       }
     }
-  },
-  "Home": {
-    "Title1": "Revolucionando los Negocios",
-    "Title2": "con Soluciones Innovadoras",
-    "Subtitle1": "Asóciate con",
-    "Subtitle2": "para impulsar el crecimiento y romper el statu quo."
   },
   "About": {
     "OurVision": {

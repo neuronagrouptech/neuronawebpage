@@ -17,7 +17,7 @@
         "Title": "Data Integration"
       }
     },
-    "Contact": "Contact Us",
+    "Contact": "Book a Free Consultation",
     "Language": "Language"
   },
 
@@ -41,12 +41,25 @@
       }
     }
   },
-
   "Home": {
-    "Title1": "Revolutionizing Business",
-    "Title2": "with Innovative Solutions",
-    "Subtitle1": "Partner with",
-    "Subtitle2": "to drive growth and disrupt the status quo."
+    "Button": "View Our Services!",
+    "messages": [
+      {
+        "title": "Empower Your Business with Cutting-Edge AI",
+        "subtitle": "Exclusive Neurona Solutions for Extraordinary Results",
+        "details": "Schedule a Demo Now!"
+      },
+      {
+        "title": "Radical Innovation for Visionary Businesses",
+        "subtitle": "We Transform Industries with Next-Generation AI",
+        "details": "Schedule a FREE Consultation with Us!"
+      },
+      {
+        "title": "Innovation that Drives Business",
+        "subtitle": "High-Impact Solutions for Results that Make a Difference",
+        "details": "Transform Your Business with Disruptive Technology!"
+      }
+    ]
   },
   "About": {
     "OurVision": {
