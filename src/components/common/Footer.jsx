@@ -62,24 +62,24 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-darkLeft text-whiteNeurona py-8 relative z-10">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+    <footer className="bg-darkLeft text-whiteNeurona py-10 relative z-10">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
           {/* Logo Section */}
-          <div className="flex flex-col items-start ">
+          <div className="flex flex-col items-start">
             <img
               src={Logo}
               alt="Logo Neurona"
-              className="w-96 h-48 object-contain cursor-pointer"
+              className="w-60 h-28 object-contain cursor-pointer"
               onClick={() => scrollToSection("home")}
             />
           </div>
 
           {/* Sections */}
           {sections.map((section) => (
-            <div key={section.title} className="flex flex-col">
-              <h4 className="text-lg font-bold mb-4 font-sans">{section.title}</h4>
-              <ul className="space-y-2">
+            <div key={section.title} className="flex flex-col space-y-2 lg:space-y-3">
+              <h4 className="text-lg font-bold font-sans">{section.title}</h4>
+              <ul className="space-y-1 lg:space-y-2">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <button
@@ -95,9 +95,9 @@ const Footer = () => {
           ))}
 
           {/* Social Section */}
-          <div className="flex flex-col">
-            <h4 className="text-lg font-bold mb-4 font-sans">SOCIAL</h4>
-            <ul className="space-y-2">
+          <div className="flex flex-col space-y-2 lg:space-y-3">
+            <h4 className="text-lg font-bold font-sans">SOCIAL</h4>
+            <ul className="space-y-1 lg:space-y-2">
               {socialLinks.map((link) => (
                 <li key={link.label}>
                   <a
@@ -118,9 +118,9 @@ const Footer = () => {
           </div>
 
           {/* Locations Section */}
-          <div className="flex flex-col">
-            <h4 className="text-lg font-bold mb-4 font-sans">LOCATIONS</h4>
-            <ul className="space-y-2">
+          <div className="flex flex-col space-y-2 lg:space-y-3">
+            <h4 className="text-lg font-bold font-sans">LOCATIONS</h4>
+            <ul className="space-y-1 lg:space-y-2">
               {locations.map((location) => (
                 <li key={`${location.city}-${location.country}`} className="flex items-center space-x-2">
                   <Flag country={location.flag} />

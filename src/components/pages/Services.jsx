@@ -1,53 +1,18 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Brain, Lightbulb, Code, Landmark} from "lucide-react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import ServiceCard from "./services/ServiceCard";
-import { NextArrow, PrevArrow } from "./services/Arrows";
+import { Plus, Minus } from "lucide-react";
+import IA from "../assets/services/IA.jpg";
+import XR from "../assets/services/XR.jpg";
+import DV from "../assets/services/DV.jpg";
+import AR from "../assets/services/AR.png";
+import ServiceModal from "./services/ServiceModal";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Services = () => {
   const { t } = useTranslation();
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [selectedService, setSelectedService] = useState(null);
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-    arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    appendDots: (dots) => (
-      <div style={{ bottom: "-30px", display: "flex", justifyContent: "left" }}>
-        <ul style={{ margin: "0", padding: "0" }}>{dots}</ul>
-      </div>
-    ),
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -62,38 +27,48 @@ const Services = () => {
 
   const services = [
     {
-      icon: <Brain className="w-24 h-24 text-whiteNeurona" />,
-      service: {
-        title: t("Services.AIDataStudio.Title"),
-        subtitle: t("Services.AIDataStudio.Subtitle"),
-        details: t("Services.AIDataStudio.Details"),
-      },
+      image: IA,
+      title: t("Services.AIDataStudio.Title"),
+      subtitle: t("Services.AIDataStudio.Subtitle"),
+      details: t("Services.AIDataStudio.Details"),
     },
     {
-      icon: <Lightbulb className="w-24 h-24 text-whiteNeurona" />,
-      service: {
-        title: t("Services.InnovationProductStudio.Title"),
-        subtitle: t("Services.InnovationProductStudio.Subtitle"),
-        details: t("Services.InnovationProductStudio.Details"),
-      },
+      image: DV,
+      title: t("Services.InnovationProductStudio.Title"),
+      subtitle: t("Services.InnovationProductStudio.Subtitle"),
+      details: t("Services.InnovationProductStudio.Details"),
     },
     {
-      icon: <Code className="w-24 h-24 text-whiteNeurona" />,
-      service: {
-        title: t("Services.SoftwareDevelopmentStudio.Title"),
-        subtitle: t("Services.SoftwareDevelopmentStudio.Subtitle"),
-        details: t("Services.SoftwareDevelopmentStudio.Details"),
-      },
+      image: XR,
+      title: t("Services.SoftwareDevelopmentStudio.Title"),
+      subtitle: t("Services.SoftwareDevelopmentStudio.Subtitle"),
+      details: t("Services.SoftwareDevelopmentStudio.Details"),
     },
     {
-      icon: <Landmark className="w-24 h-24 text-whiteNeurona" />,
-      service: {
-        title: t("Services.EnterpriseTechArchitecture.Title"),
-        subtitle: t("Services.EnterpriseTechArchitecture.Subtitle"),
-        details: t("Services.EnterpriseTechArchitecture.Details"),
-      },
+      image: AR,
+      title: t("Services.EnterpriseTechArchitecture.Title"),
+      subtitle: t("Services.EnterpriseTechArchitecture.Subtitle"),
+      details: t("Services.EnterpriseTechArchitecture.Details"),
     },
   ];
+
+  const handleServiceClick = (index) => {
+    if (window.innerWidth >= 1024) {
+      setSelectedService(services[index]);
+    } else {
+      if (selectedService === index) {
+        setSelectedService(null);
+      } else {
+        setSelectedService(index);
+        setTimeout(() => {
+          const cardElement = document.getElementById(`service-card-${index}`);
+          if (cardElement) {
+            cardElement.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 100);
+      }
+    }
+  };
 
   return (
     <section
@@ -103,25 +78,88 @@ const Services = () => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
       }`}
     >
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-6xl text-center mb-12 md:mb-24 text-whiteNeurona">
+      <div className="max-w-7xl mx-auto pt-28">
+        <motion.h1 
+          className="text-4xl md:text-6xl text-center mb-12 md:mb-24 text-whiteNeurona font-extrabold"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           {t("Services.Title")}
-        </h1>
-        <Slider {...settings}>
+        </motion.h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center">
           {services.map((service, index) => (
-            <div key={index} className="p-4">
-              <ServiceCard
-                icon={service.icon}
-                service={service.service}
-                isExpanded={expandedIndex === index}
-                onToggle={() =>
-                  setExpandedIndex(expandedIndex === index ? null : index)
-                }
-              />
-            </div>
+            <motion.div
+              key={index}
+              id={`service-card-${index}`}
+              className={`relative w-full bg-darkLeft rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-blueGreen ${
+                selectedService === index ? "h-auto" : "h-[380px]"
+              }`}
+              whileHover={{ scale: 1.05 }}
+            >
+              <button
+                className="w-full h-[380px] relative group"
+                onClick={() => handleServiceClick(index)}
+              >
+                <motion.img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8 }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-darkLeft bg-opacity-80 text-whiteNeurona flex justify-between items-center backdrop-blur-md">
+                  <span className="text-lg font-semibold tracking-wide">{service.title}</span>
+                  {selectedService === index ? (
+                    <Minus className="w-6 h-6 text-blueGreen" />
+                  ) : (
+                    <Plus className="w-6 h-6 text-blueGreen" />
+                  )}
+                </div>
+              </button>
+
+              {selectedService === index && (
+                <motion.div 
+                  className="p-6 text-whiteNeurona bg-darkLeft rounded-b-2xl transition-opacity duration-300"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                >
+                  <p className="text-lg leading-relaxed mb-4 text-grayNeurona">
+                    {service.subtitle}
+                  </p>
+                  <div className="border-t border-grayNeurona pt-4">
+                    <ul className="space-y-3">
+                      {service.details?.map((detail, index) => (
+                        <li
+                          key={index}
+                          className="text-whiteNeurona text-base leading-relaxed flex items-start"
+                        >
+                          <span className="w-3 h-3 bg-blueGreen rounded-full mt-2 mr-3"></span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
           ))}
-        </Slider>
+        </div>
       </div>
+      <AnimatePresence>
+        {selectedService && (
+          <ServiceModal
+            isOpen={!!selectedService && typeof selectedService !== "number"}
+            onClose={() => setSelectedService(null)}
+            image={selectedService?.image}
+            title={selectedService?.title}
+            description={selectedService?.subtitle}
+            details={selectedService?.details}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };
