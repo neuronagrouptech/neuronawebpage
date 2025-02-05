@@ -80,7 +80,7 @@ const Services = () => {
     >
       <div className="max-w-7xl mx-auto pt-28">
         <motion.h1 
-          className="text-4xl md:text-6xl text-center mb-12 md:mb-24 text-whiteNeurona font-extrabold"
+          className="text-4xl md:text-6xl text-center mb-12 md:mb-24 text-whiteNeurona "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

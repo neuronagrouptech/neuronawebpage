@@ -35,12 +35,12 @@ const ServiceModal = ({ isOpen, onClose, image, title, description, details }) =
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="bg-darkLeft rounded-2xl shadow-xl w-full max-w-5xl p-6 lg:p-8 flex flex-col lg:flex-row overflow-hidden relative max-h-[90vh]"
+          className="bg-darkLeft rounded-2xl shadow-xl w-full max-w-5xl p-6 lg:p-8 flex flex-col lg:flex-row overflow-hidden relative max-h-[90vh] shadow-blueGreen"
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0.8 }}
         >
-          <div className="w-full lg:w-1/2 flex items-center justify-center bg-darkLeft p-4 relative">
+          <div className="w-full lg:w-1/2 flex items-center justify-center bg-darkLeft p-4 relative  ">
             {!imageLoaded && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-12 h-12 border-4 border-blueGreen border-t-transparent rounded-full animate-spin"></div>
@@ -57,7 +57,7 @@ const ServiceModal = ({ isOpen, onClose, image, title, description, details }) =
             )}
           </div>
 
-          <div className="w-full lg:w-1/2 p-4 text-whiteNeurona overflow-y-auto max-h-[85vh]">
+          <div className="w-full lg:w-1/2 p-4 text-whiteNeurona overflow-y-auto max-h-[85vh] ">
             <button
               className="absolute top-4 right-4 text-grayNeurona hover:text-whiteNeurona transition-colors focus:outline-none bg-gray-700 p-2 rounded-full shadow-md hover:bg-gray-600"
               onClick={onClose}
