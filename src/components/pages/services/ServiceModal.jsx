@@ -1,81 +1,205 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState, useCallback, memo } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
+const ModalImage = memo(({ src, alt }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-darkLeft text-grayNeurona">
+        Error loading image
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-12 h-12 border-4 border-blueGreen border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+      <motion.img
+        src={src}
+        alt={alt}
+        className={`w-full h-48 lg:h-auto object-cover transition-opacity duration-300 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+        onLoad={() => setIsLoaded(true)}
+        onError={() => setHasError(true)}
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3 }}
+        loading="lazy"
+      />
+    </>
+  );
+});
+
+ModalImage.displayName = 'ModalImage';
+
 const ServiceModal = ({ isOpen, onClose, image, title, description, details }) => {
   const { t } = useTranslation();
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
+  // Manejador de teclas optimizado
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === "Escape") {
+      onClose();
+    }
+  }, [onClose]);
+
+  // Manejador de clic fuera del modal
+  const handleOutsideClick = useCallback((e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  }, [onClose]);
+
+  // Gestión de efectos del modal
   useEffect(() => {
     if (isOpen) {
+      // Bloquear scroll
       document.body.style.overflow = "hidden";
+      // Añadir listener de teclado
+      window.addEventListener("keydown", handleKeyDown);
+      
+      // Scroll al modal con fallback para navegadores antiguos
       const modalElement = document.getElementById("service-modal");
       if (modalElement) {
-        modalElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        if ('scrollBehavior' in document.documentElement.style) {
+          modalElement.scrollIntoView({ 
+            behavior: shouldReduceMotion ? "auto" : "smooth", 
+            block: "start" 
+          });
+        } else {
+          modalElement.scrollIntoView(true);
+        }
       }
-    } else {
-      document.body.style.overflow = "auto";
     }
 
     return () => {
       document.body.style.overflow = "auto";
+      window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isOpen, handleKeyDown, shouldReduceMotion]);
+
+  // Variantes de animación
+  const modalVariants = {
+    hidden: { 
+      opacity: 0,
+      scale: shouldReduceMotion ? 1 : 0.9
+    },
+    visible: { 
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: shouldReduceMotion ? 0.1 : 0.3,
+        ease: "easeOut"
+      }
+    },
+    exit: {
+      opacity: 0,
+      scale: shouldReduceMotion ? 1 : 0.9,
+      transition: {
+        duration: shouldReduceMotion ? 0.1 : 0.2,
+        ease: "easeIn"
+      }
+    }
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        delay: shouldReduceMotion ? 0 : 0.2,
+        duration: shouldReduceMotion ? 0.1 : 0.3
+      }
+    }
+  };
 
   if (!isOpen) return null;
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       <motion.div
         id="service-modal"
-        className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+        className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        onClick={handleOutsideClick}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
       >
         <motion.div
           className="bg-darkLeft rounded-2xl shadow-xl w-full max-w-5xl p-6 lg:p-8 flex flex-col lg:flex-row overflow-hidden relative max-h-[90vh] shadow-blueGreen"
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          exit={{ scale: 0.8 }}
+          variants={modalVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
         >
-          <div className="w-full lg:w-1/2 flex items-center justify-center bg-darkLeft p-4 relative  ">
-            {!imageLoaded && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-12 h-12 border-4 border-blueGreen border-t-transparent rounded-full animate-spin"></div>
-              </div>
-            )}
-            {image && (
-              <img
-                src={image}
-                alt={title}
-                className="w-full h-48 lg:h-auto object-cover"
-                onLoad={() => setImageLoaded(true)}
-                style={{ display: imageLoaded ? "block" : "none" }}
-              />
-            )}
+          <div className="w-full lg:w-1/2 flex items-center justify-center bg-darkLeft p-4 relative">
+            <ModalImage
+              src={image}
+              alt={title}
+            />
           </div>
 
-          <div className="w-full lg:w-1/2 p-4 text-whiteNeurona overflow-y-auto max-h-[85vh] ">
-            <button
-              className="absolute top-4 right-4 text-grayNeurona hover:text-whiteNeurona transition-colors focus:outline-none bg-gray-700 p-2 rounded-full shadow-md hover:bg-gray-600"
+          <div className="w-full lg:w-1/2 p-4 text-whiteNeurona overflow-y-auto max-h-[85vh]">
+            <motion.button
+              className="absolute top-4 right-4 text-grayNeurona hover:text-whiteNeurona transition-colors focus:outline-none focus:ring-2 focus:ring-blueGreen bg-gray-700 p-2 rounded-full shadow-md hover:bg-gray-600"
               onClick={onClose}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               aria-label={t("Close")}
             >
               <X className="w-6 h-6" />
-            </button>
-            {title && <h2 className="text-3xl font-bold mb-4 text-blueGreen">{title}</h2>}
-            {description && <p className="text-lg leading-relaxed mb-4 text-grayNeurona">{description}</p>}
-            <div className="border-t border-darkLeft pt-4">
-              <ul className="space-y-2">
-                {details?.map((detail, index) => (
-                  <li key={index} className="text-whiteNeurona text-base leading-relaxed flex items-start">
-                    <span className="w-2 h-2 bg-blueGreen rounded-full mt-2 mr-2"></span>{detail}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </motion.button>
+
+            <motion.div
+              variants={contentVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {title && (
+                <h2 id="modal-title" className="text-3xl font-bold mb-4 text-blueGreen">
+                  {title}
+                </h2>
+              )}
+              {description && (
+                <p className="text-lg leading-relaxed mb-4 text-grayNeurona">
+                  {description}
+                </p>
+              )}
+              {details && details.length > 0 && (
+                <div className="border-t border-darkLeft pt-4">
+                  <ul className="space-y-2">
+                    {details.map((detail, index) => (
+                      <motion.li
+                        key={index}
+                        className="text-whiteNeurona text-base leading-relaxed flex items-start"
+                        initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ 
+                          delay: shouldReduceMotion ? 0 : 0.3 + index * 0.1,
+                          duration: shouldReduceMotion ? 0.1 : 0.3
+                        }}
+                      >
+                        <span className="w-2 h-2 bg-blueGreen rounded-full mt-2 mr-2" />
+                        {detail}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </motion.div>
           </div>
         </motion.div>
       </motion.div>
@@ -83,4 +207,4 @@ const ServiceModal = ({ isOpen, onClose, image, title, description, details }) =
   );
 };
 
-export default ServiceModal;
+export default memo(ServiceModal);
