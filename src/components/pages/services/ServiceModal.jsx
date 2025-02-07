@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback, memo } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 
 const ModalImage = memo(({ src, alt }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -39,41 +40,41 @@ const ModalImage = memo(({ src, alt }) => {
   );
 });
 
-ModalImage.displayName = 'ModalImage';
+ModalImage.displayName = "ModalImage";
 
 const ServiceModal = ({ isOpen, onClose, image, title, description, details }) => {
   const { t } = useTranslation();
   const shouldReduceMotion = useReducedMotion();
 
-  // Manejador de teclas optimizado
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === "Escape") {
-      onClose();
-    }
-  }, [onClose]);
+  const handleKeyDown = useCallback(
+    (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    },
+    [onClose]
+  );
 
-  // Manejador de clic fuera del modal
-  const handleOutsideClick = useCallback((e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  }, [onClose]);
+  const handleOutsideClick = useCallback(
+    (e) => {
+      if (e.target === e.currentTarget) {
+        onClose();
+      }
+    },
+    [onClose]
+  );
 
-  // Gestión de efectos del modal
   useEffect(() => {
     if (isOpen) {
-      // Bloquear scroll
       document.body.style.overflow = "hidden";
-      // Añadir listener de teclado
       window.addEventListener("keydown", handleKeyDown);
-      
-      // Scroll al modal con fallback para navegadores antiguos
+
       const modalElement = document.getElementById("service-modal");
       if (modalElement) {
-        if ('scrollBehavior' in document.documentElement.style) {
-          modalElement.scrollIntoView({ 
-            behavior: shouldReduceMotion ? "auto" : "smooth", 
-            block: "start" 
+        if ("scrollBehavior" in document.documentElement.style) {
+          modalElement.scrollIntoView({
+            behavior: shouldReduceMotion ? "auto" : "smooth",
+            block: "start",
           });
         } else {
           modalElement.scrollIntoView(true);
@@ -87,40 +88,39 @@ const ServiceModal = ({ isOpen, onClose, image, title, description, details }) =
     };
   }, [isOpen, handleKeyDown, shouldReduceMotion]);
 
-  // Variantes de animación
   const modalVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
-      scale: shouldReduceMotion ? 1 : 0.9
+      scale: shouldReduceMotion ? 1 : 0.9,
     },
-    visible: { 
+    visible: {
       opacity: 1,
       scale: 1,
       transition: {
         duration: shouldReduceMotion ? 0.1 : 0.3,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     },
     exit: {
       opacity: 0,
       scale: shouldReduceMotion ? 1 : 0.9,
       transition: {
         duration: shouldReduceMotion ? 0.1 : 0.2,
-        ease: "easeIn"
-      }
-    }
+        ease: "easeIn",
+      },
+    },
   };
 
   const contentVariants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         delay: shouldReduceMotion ? 0 : 0.2,
-        duration: shouldReduceMotion ? 0.1 : 0.3
-      }
-    }
+        duration: shouldReduceMotion ? 0.1 : 0.3,
+      },
+    },
   };
 
   if (!isOpen) return null;
@@ -146,10 +146,7 @@ const ServiceModal = ({ isOpen, onClose, image, title, description, details }) =
           exit="exit"
         >
           <div className="w-full lg:w-1/2 flex items-center justify-center bg-darkLeft p-4 relative">
-            <ModalImage
-              src={image}
-              alt={title}
-            />
+            <ModalImage src={image} alt={title} />
           </div>
 
           <div className="w-full lg:w-1/2 p-4 text-whiteNeurona overflow-y-auto max-h-[85vh]">
@@ -163,11 +160,7 @@ const ServiceModal = ({ isOpen, onClose, image, title, description, details }) =
               <X className="w-6 h-6" />
             </motion.button>
 
-            <motion.div
-              variants={contentVariants}
-              initial="hidden"
-              animate="visible"
-            >
+            <motion.div variants={contentVariants} initial="hidden" animate="visible">
               {title && (
                 <h2 id="modal-title" className="text-3xl font-bold mb-4 text-blueGreen">
                   {title}
@@ -187,9 +180,9 @@ const ServiceModal = ({ isOpen, onClose, image, title, description, details }) =
                         className="text-whiteNeurona text-base leading-relaxed flex items-start"
                         initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ 
+                        transition={{
                           delay: shouldReduceMotion ? 0 : 0.3 + index * 0.1,
-                          duration: shouldReduceMotion ? 0.1 : 0.3
+                          duration: shouldReduceMotion ? 0.1 : 0.3,
                         }}
                       >
                         <span className="w-2 h-2 bg-blueGreen rounded-full mt-2 mr-2" />
@@ -205,6 +198,15 @@ const ServiceModal = ({ isOpen, onClose, image, title, description, details }) =
       </motion.div>
     </AnimatePresence>
   );
+};
+
+ServiceModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  details: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default memo(ServiceModal);
