@@ -1,5 +1,5 @@
 <div align="center" style="padding-bottom: 30px;">
-  <img src="src/assets/LOGO.avif" alt="Neurona Logo" />
+  <img src="./src/assets/LOGO.avif" alt="Neurona Logo" />
 </div>
 
 # Neurona Web Site
